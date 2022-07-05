@@ -35,19 +35,42 @@ const Texture = styled.span`
 export type BasePageProps = PropsWithChildren & {
   title?: string;
   metaContent?: string;
+  websiteUrl?: string;
+  splashPath?: string;
 };
 
 const BasePage: React.FC<BasePageProps> = ({
   children,
   title = 'Bruna Ferri | Arquiteta | Te ajudo a descomplicar o pós faculdade',
-  metaContent = 'Te ajudo a descomplicar o pós faculdade. Projetando ambientes únicos e sofisticados',
+  metaContent = 'Te ajudo a descomplicar o pós faculdade',
+  websiteUrl = 'https://www.arqbrunaferri.com',
+  splashPath = "/splash.webp"
 }) => {
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={metaContent} />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={websiteUrl} />
+
+        <meta name="referrer" content="origin" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="theme-color" content="#f9f9fa" />
+        <meta name="description" content={metaContent} />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metaContent} />
+        <meta property="og:description" content={metaContent} />
+        <meta property="og:url" content={websiteUrl} />
+        <meta property="og:site_name" content={metaContent} />
+        <meta property="og:image" content={splashPath} />
+        <meta property="og:image:secure_url" content={splashPath} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content={metaContent} />
+        <meta name="twitter:title" content={metaContent} />
+        <meta name="twitter:image" content={splashPath} />
       </Head>
       <Lines />
       <Texture />
