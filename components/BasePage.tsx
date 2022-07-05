@@ -52,7 +52,6 @@ const BasePage: React.FC<BasePageProps> = ({
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={websiteUrl} />
-
         <meta name="referrer" content="origin" />
         <meta name="theme-color" content="#f9f9fa" />
         <meta name="description" content={metaContent} />
