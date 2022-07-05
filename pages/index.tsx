@@ -31,8 +31,7 @@ const Home: NextPage = () => {
           height={144}
           quality={100}
           css={profileImageStyle}
-          placeholder="blur"
-          blurDataURL="/profile-blur.webp"
+          placeholder="empty"
           layout="fixed"
           src="/profile.webp"
           alt="Bruna Ferri | Arquiteta"
@@ -42,8 +41,7 @@ const Home: NextPage = () => {
           width={215}
           height={215}
           quality={100}
-          placeholder="blur"
-          blurDataURL="/profile-blur.webp"
+          placeholder="empty"
           layout="fixed"
           src="/profile-name.webp"
           alt="Te ajudo a descomplicar o pós faculdade. Projetando ambientes únicos e sofisticados"
