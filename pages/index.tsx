@@ -52,9 +52,30 @@ const Home: NextPage = () => {
       <br />
 
       <Flex as="article" w="full" justify="space-evenly" align="center">
-        <CgFacebook size="2.4rem" css={socialMediaIcons} onClick={() => window.open(URL_SOCIAL_MEDIA_FB, '_blank')} />
-        <BsInstagram size="2.8rem" css={socialMediaIcons} onClick={() => window.open(URL_SOCIAL_MEDIA_INSTA, '_blank')} />
-        <FaPinterestP size="2.4rem" css={socialMediaIcons} onClick={() => window.open(URL_SOCIAL_MEDIA_PIN, '_blank')} />
+        <CgFacebook
+          size="2.4rem"
+          css={socialMediaIcons}
+          onClick={() => {
+            window.open(URL_SOCIAL_MEDIA_FB, '_blank');
+            alert(URL_SOCIAL_MEDIA_FB);
+          }}
+        />
+        <BsInstagram
+          size="2.8rem"
+          css={socialMediaIcons}
+          onClick={() => {
+            window.open(URL_SOCIAL_MEDIA_INSTA, '_blank');
+            alert(URL_SOCIAL_MEDIA_INSTA);
+          }}
+        />
+        <FaPinterestP
+          size="2.4rem"
+          css={socialMediaIcons}
+          onClick={() => {
+            window.open(URL_SOCIAL_MEDIA_PIN, '_blank');
+            alert(URL_SOCIAL_MEDIA_PIN);
+          }}
+        />
       </Flex>
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="4">
