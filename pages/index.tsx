@@ -1,71 +1,42 @@
+import { PropsWithChildren } from 'react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import BasePage from '../components/BasePage';
+import theme from '../theme';
 
 import { CgFacebook } from 'react-icons/cg';
 import { FaPinterestP } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
-import { css, keyframes } from '@emotion/react';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import styled from '@emotion/styled';
-import theme from '../theme';
+import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
-const profileImageBorderSpin = keyframes`
-  from {
-    transform:rotate(0deg);
-  }
-  to {
-    transform:rotate(360deg);
-  }
-`;
+import {
+  DEFAULT_COLOR_ARQBROWN,
+  ProfileImageArea,
+  ProfileImageBorder,
+  profileImageStyle,
+  socialMediaIcons,
+} from '../styles/indexs';
 
-const ProfileImageArea = styled.figure`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 44px;
+const URL_ORCAMENTO = process.env.NEXT_PUBLIC_CTA_ORCAMENTO;
+const URL_RENDER = process.env.NEXT_PUBLIC_CTA_RENDER;
+const URL_CONTATO = 'mailto:arqbrunaferri@gmail.com';
+const URL_TCC = process.env.NEXT_PUBLIC_CTA_TCC_LINK;
 
-  & span:last-child {
-    position: absolute !important;
-    animation-name: ${profileImageBorderSpin};
-    animation-duration: 60000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-`;
-
-const ProfileImageBorder = styled.span`
-  background: linear-gradient(
-    252deg,
-    ${theme.colors.white} 0%,
-    ${theme.colors['arqbrown'][300]} 55%,
-    ${theme.colors['arqbrown'][500]} 85%
-  );
-  border-radius: 50%;
-  width: 170px;
-  height: 170px;
-  position: absolute;
-  animation-name: ${profileImageBorderSpin};
-  animation-duration: 10000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-`;
-
-const profileImageStyle = css`
-  border-radius: 50%;
-`;
-
-const socialMediaIcons = css`
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: ${theme.colors['arqbrown'][300]};
-
-  &:hover {
-    transform: scale(1.05);
-    color: ${theme.colors['arqbrown'][500]};
-  }
-`;
+const ButtonCTA: React.FC<PropsWithChildren & { link: string }> = ({ link, children }) => (
+  <Button
+    w="90%"
+    variant="outline"
+    fontFamily="Emperatriz"
+    border="2px"
+    size="lg"
+    borderRadius="md"
+    borderColor="arqbrown.500"
+    onClick={() => window.open(link, '_blank')}
+    _hover={{ bg: DEFAULT_COLOR_ARQBROWN, color: theme.colors.white, transform: 'scale(1.05)' }}
+  >
+    {children}
+  </Button>
+);
 
 const Home: NextPage = () => {
   return (
@@ -107,10 +78,40 @@ const Home: NextPage = () => {
       </Flex>
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="4">
-        <Box bg="arqbrown.300" borderColor="arqbrown.800" px={4} py={2} border="2px" borderRadius="md">
+        <Box bg="arqbrown.400" borderColor="arqbrown.500" px={4} py={2} border="2px" borderRadius="md">
           <Heading size="sm" color="white">
             EM QUE POSSO TE AJUDAR?
           </Heading>
+        </Box>
+      </Flex>
+
+      <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
+        <Box w="full" justifyContent="center">
+          <ButtonCTA link={URL_ORCAMENTO!}>SOLICITAR ORÇAMENTO</ButtonCTA>
+        </Box>
+        <Box w="full" justifyContent="center">
+          <ButtonCTA link={URL_RENDER!}>SOLICITAR RENDER</ButtonCTA>
+        </Box>
+        <Box w="full" justifyContent="center">
+          <ButtonCTA link={URL_CONTATO!}>ENTRAR EM CONTATO</ButtonCTA>
+        </Box>
+        <Box w="full" justifyContent="center">
+          <ButtonCTA link={URL_TCC!}>MAIS SOBRE MEU TCC</ButtonCTA>
+        </Box>
+      </Stack>
+
+      <Flex w="full" as="article" justify="center" align="center" marginTop="6" flexDir="column">
+        <Box w="full" justifyContent="center">
+          <Heading color="arqbrown.300" fontSize="2xl">
+            SOBRE
+          </Heading>
+        </Box>
+        <Box w="full" justifyContent="center" mt="2">
+          <Text fontWeight="thin" fontFamily="Fira Sans" color="gray.500">
+            Arquiteta e Urbanista, atuando na área de projetos de interiores residenciais & arquitetônicos de alto
+            padrão, buscando transformar os ambientes em lares com autenticidade e funcionalidade, através de uma
+            arquitetura única e sofisticada, com um olhar atento às necessidades de cada cliente e tendências atuais.
+          </Text>
         </Box>
       </Flex>
     </BasePage>
