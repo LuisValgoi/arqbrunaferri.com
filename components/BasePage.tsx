@@ -54,7 +54,6 @@ const BasePage: React.FC<BasePageProps> = ({
         <link rel="canonical" href={websiteUrl} />
 
         <meta name="referrer" content="origin" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="theme-color" content="#f9f9fa" />
         <meta name="description" content={metaContent} />
         <meta property="og:locale" content="pt_BR" />
