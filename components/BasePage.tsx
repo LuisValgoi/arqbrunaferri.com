@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
+import { Flex } from '@chakra-ui/react';
 
 const Lines = styled.svg`
   background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.9)), url(/lines.svg);
@@ -31,15 +32,6 @@ const Texture = styled.span`
   z-index: -1;
 `;
 
-const CenteredContent = styled.article`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
 export type BasePageProps = PropsWithChildren & {
   title?: string;
   metaContent?: string;
@@ -59,9 +51,11 @@ const BasePage: React.FC<BasePageProps> = ({
       </Head>
       <Lines />
       <Texture />
-      <CenteredContent>
-        <>{children}</>
-      </CenteredContent>
+      <Flex as="main" w="full" direction="column" align="center" justify="center">
+        <Flex as="article" width={320} direction="column" maxW={320} textAlign="center">
+          {children}
+        </Flex>
+      </Flex>
     </>
   );
 };
