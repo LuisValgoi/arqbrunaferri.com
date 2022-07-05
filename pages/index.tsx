@@ -1,42 +1,24 @@
-import { PropsWithChildren } from 'react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import BasePage from '../components/BasePage';
-import theme from '../theme';
+import ButtonCTA from '../components/ButtonCTA';
 
 import { CgFacebook } from 'react-icons/cg';
 import { FaPinterestP } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
-import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
 import {
-  DEFAULT_COLOR_ARQBROWN,
   ProfileImageArea,
   ProfileImageBorder,
   profileImageStyle,
   socialMediaIcons,
-} from '../styles/indexs';
+} from '../styles';
 
 const URL_ORCAMENTO = process.env.NEXT_PUBLIC_CTA_ORCAMENTO;
 const URL_RENDER = process.env.NEXT_PUBLIC_CTA_RENDER;
 const URL_CONTATO = 'mailto:arqbrunaferri@gmail.com';
 const URL_TCC = process.env.NEXT_PUBLIC_CTA_TCC_LINK;
-
-const ButtonCTA: React.FC<PropsWithChildren & { link: string }> = ({ link, children }) => (
-  <Button
-    w="90%"
-    variant="outline"
-    fontFamily="Emperatriz"
-    border="2px"
-    size="lg"
-    borderRadius="md"
-    borderColor="arqbrown.500"
-    onClick={() => window.open(link, '_blank')}
-    _hover={{ bg: DEFAULT_COLOR_ARQBROWN, color: theme.colors.white, transform: 'scale(1.05)' }}
-  >
-    {children}
-  </Button>
-);
 
 const Home: NextPage = () => {
   return (
