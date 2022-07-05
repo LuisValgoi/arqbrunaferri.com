@@ -15,63 +15,63 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       }
 
     @font-face {
-      font-family: "firasans";
+      font-family: "Fira Sans";
       src: url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-bold";
+      font-family: "Fira Sans Bold";
       src: url("/fonts/fira-sans/FiraSans-Bold.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Bold.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-extra-bold";
+      font-family: "Fira Sans Extra Bold";
       src: url("/fonts/fira-sans/FiraSans-ExtraBold.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-ExtraBold.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-extra-light";
+      font-family: "Fira Sans Extra Light";
       src: url("/fonts/fira-sans/FiraSans-ExtraLight.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-ExtraLight.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-light";
+      font-family: "Fira Sans Light";
       src: url("/fonts/fira-sans/FiraSans-Light.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Light.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-medium";
+      font-family: "Fira Sans Medium";
       src: url("/fonts/fira-sans/FiraSans-Medium.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Medium.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-regular";
+      font-family: "Fira Sans Regular";
       src: url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-semi-bold";
+      font-family: "Fira Sans Semi Bold";
       src: url("/fonts/fira-sans/FiraSans-SemiBold.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-SemiBold.woff") format("woff");
       font-weight: normal;
       font-style: normal;
     }
     
     @font-face {
-      font-family: "firasans-thin";
+      font-family: "Fira Sans Thin";
       src: url("/fonts/fira-sans/FiraSans-Thin.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Thin.woff") format("woff");
       font-weight: normal;
       font-style: normal;

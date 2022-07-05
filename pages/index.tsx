@@ -87,7 +87,7 @@ const Home: NextPage = () => {
           </Heading>
         </Box>
         <Box w="full" justifyContent="center" mt="2">
-          <Text fontWeight="thin" fontFamily="Fira Sans" color="gray.500">
+          <Text fontWeight="thin" color="gray.500">
             Arquiteta e Urbanista, atuando na área de projetos de interiores residenciais & arquitetônicos de alto
             padrão, buscando transformar os ambientes em lares com autenticidade e funcionalidade, através de uma
             arquitetura única e sofisticada, com um olhar atento às necessidades de cada cliente e tendências atuais.
