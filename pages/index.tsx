@@ -66,7 +66,7 @@ const Home: NextPage = () => {
       </Flex>
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="4">
-        <Box bg="arqbrown.400" borderColor="arqbrown.500" px={4} py={2} border="2px" borderRadius="md">
+        <Box bg="arqbrown.400" borderColor="arqbrown.400" px={4} py={2} border="2px" borderRadius="md">
           <Heading size="sm" color="white">
             EM QUE POSSO TE AJUDAR?
           </Heading>
