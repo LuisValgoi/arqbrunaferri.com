@@ -8,17 +8,13 @@ import { FaPinterestP } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
 import { Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
-import {
-  ProfileImageArea,
-  ProfileImageBorder,
-  profileImageStyle,
-  socialMediaIcons,
-} from '../styles';
+import { ProfileImageArea, ProfileImageBorder, profileImageStyle, socialMediaIcons } from '../styles';
 
-const URL_ORCAMENTO = process.env.NEXT_PUBLIC_CTA_ORCAMENTO;
-const URL_RENDER = process.env.NEXT_PUBLIC_CTA_RENDER;
+const URL_ORCAMENTO = 'https://my.forms.app/arqbrunaferri/orcamento';
+const URL_RENDER =
+  'https://api.whatsapp.com/send?phone=5551981909312&text=Ol%C3%A1,%20como%20funciona%20o%20seu%20servi%C3%A7o%20de%20render?%20';
 const URL_CONTATO = 'mailto:arqbrunaferri@gmail.com';
-const URL_TCC = process.env.NEXT_PUBLIC_CTA_TCC_LINK;
+const URL_TCC = 'https://drive.google.com/file/d/1_GfCgB1u4dnGJR0bN5qHZg04TluvWq3B/view?usp=sharing';
 
 const Home: NextPage = () => {
   return (
