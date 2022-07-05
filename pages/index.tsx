@@ -56,24 +56,24 @@ const Home: NextPage = () => {
           size="2.4rem"
           css={socialMediaIcons}
           onClick={() => {
+            debugger;
             window.open(URL_SOCIAL_MEDIA_FB, '_blank');
-            alert(URL_SOCIAL_MEDIA_FB);
           }}
         />
         <BsInstagram
           size="2.8rem"
           css={socialMediaIcons}
           onClick={() => {
+            debugger;
             window.open(URL_SOCIAL_MEDIA_INSTA, '_blank');
-            alert(URL_SOCIAL_MEDIA_INSTA);
           }}
         />
         <FaPinterestP
           size="2.4rem"
           css={socialMediaIcons}
           onClick={() => {
+            debugger;
             window.open(URL_SOCIAL_MEDIA_PIN, '_blank');
-            alert(URL_SOCIAL_MEDIA_PIN);
           }}
         />
       </Flex>

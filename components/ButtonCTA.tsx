@@ -15,8 +15,8 @@ const ButtonCTA: React.FC<PropsWithChildren & { link: string }> = ({ link, child
     borderRadius="md"
     borderColor="arqbrown.500"
     onClick={() => {
+      debugger;
       window.open(link, '_blank');
-      alert(link);
     }}
     _hover={{ bg: DEFAULT_COLOR_ARQBROWN, color: theme.colors.white, transform: 'scale(1.05)' }}
   >
