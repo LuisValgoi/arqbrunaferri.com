@@ -2,7 +2,6 @@ import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import BasePage from '../components/BasePage';
-import ButtonCTA from '../components/ButtonCTA';
 import { DEFAULT_COLOR_ARQBROWN } from '../styles';
 import theme from '../theme';
 

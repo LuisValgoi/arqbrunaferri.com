@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import BasePage from '../components/BasePage';
-import ButtonCTA from '../components/ButtonCTA';
 
 import { CgFacebook } from 'react-icons/cg';
 import { FaPinterestP } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
-import { Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import { Box, Flex, Stack } from '@chakra-ui/react';
+import { Button, Heading, Text } from '../components/UI';
 
 import { socialMediaIcons } from '../styles';
 
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="4">
         <Box bg="arqbrown.400" borderColor="arqbrown.400" px={4} py={2} border="2px" borderRadius="md">
-          <Heading size="sm" color="white">
+          <Heading fontSize="md" color="white">
             EM QUE POSSO TE AJUDAR?
           </Heading>
         </Box>
@@ -46,27 +46,25 @@ const Home: NextPage = () => {
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
         <Box w="full" justifyContent="center">
-          <ButtonCTA link={URL_CTA_ORCAMENTO!}>SOLICITAR ORÇAMENTO</ButtonCTA>
+          <Button onClick={() => window.open(URL_CTA_ORCAMENTO!, '_blank')}>SOLICITAR ORÇAMENTO</Button>
         </Box>
         <Box w="full" justifyContent="center">
-          <ButtonCTA link={URL_CTA_RENDER!}>SOLICITAR RENDER</ButtonCTA>
+          <Button onClick={() => window.open(URL_CTA_RENDER!, '_blank')}>SOLICITAR RENDER</Button>
         </Box>
         <Box w="full" justifyContent="center">
-          <ButtonCTA link={URL_CTA_CONTATO!}>ENTRAR EM CONTATO</ButtonCTA>
+          <Button onClick={() => window.open(URL_CTA_CONTATO!, '_blank')}>ENTRAR EM CONTATO</Button>
         </Box>
         <Box w="full" justifyContent="center">
-          <ButtonCTA link={URL_CTA_TCC!}>MAIS SOBRE MEU TCC</ButtonCTA>
+          <Button onClick={() => window.open(URL_CTA_TCC!, '_blank')}>MAIS SOBRE MEU TCC</Button>
         </Box>
       </Stack>
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="6" flexDir="column">
         <Box w="full" justifyContent="center">
-          <Heading color="arqbrown.300" fontSize="2xl">
-            SOBRE
-          </Heading>
+          <Heading>SOBRE</Heading>
         </Box>
         <Box w="full" justifyContent="center" mt="2">
-          <Text fontWeight="thin" color="gray.500">
+          <Text>
             Arquiteta e Urbanista, atuando na área de projetos de interiores residenciais & arquitetônicos de alto
             padrão, buscando transformar os ambientes em lares com autenticidade e funcionalidade, através de uma
             arquitetura única e sofisticada, com um olhar atento às necessidades de cada cliente e tendências atuais.
