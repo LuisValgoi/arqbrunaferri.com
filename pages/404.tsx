@@ -8,7 +8,7 @@ import theme from '../theme';
 export default function FourOhFour() {
   return (
     <BasePage>
-      <Heading fontSize="2xl">PÁGINA NÃO ENCONTRADA</Heading>
+      <Heading color="arqbrown.300" fontSize="2xl">PÁGINA NÃO ENCONTRADA</Heading>
 
       <Flex w="full" as="article" justify="center" align="center" flexDir="column">
         <Box w="full" justifyContent="center" mt="2">
