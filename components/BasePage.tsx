@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
 import { Flex } from '@chakra-ui/react';
+import PageHeader from './PageHeader';
 
 const Lines = styled.svg`
   background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.9)), url(/lines.svg);
@@ -44,7 +45,7 @@ const BasePage: React.FC<BasePageProps> = ({
   title = 'Bruna Ferri | Arquiteta | Te ajudo a descomplicar o pós faculdade',
   metaContent = 'Te ajudo a descomplicar o pós faculdade',
   websiteUrl = 'https://www.arqbrunaferri.com',
-  splashPath = "/splash.webp"
+  splashPath = '/splash.webp',
 }) => {
   return (
     <>
@@ -74,6 +75,7 @@ const BasePage: React.FC<BasePageProps> = ({
       <Texture />
       <Flex as="main" w="full" direction="column" align="center" justify="center">
         <Flex as="article" width={320} direction="column" maxW={320} textAlign="center">
+          <PageHeader />
           {children}
         </Flex>
       </Flex>

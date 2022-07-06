@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import BasePage from '../components/BasePage';
 import ButtonCTA from '../components/ButtonCTA';
 
@@ -8,7 +7,7 @@ import { FaPinterestP } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
 import { Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
-import { ProfileImageArea, ProfileImageBorder, profileImageStyle, socialMediaIcons } from '../styles';
+import { socialMediaIcons } from '../styles';
 
 const URL_SOCIAL_MEDIA_FB = 'https://www.facebook.com/arqbrunaferri';
 const URL_SOCIAL_MEDIA_INSTA = 'https://www.instagram.com/arqbrunaferri';
@@ -23,34 +22,6 @@ const URL_CTA_TCC = 'https://drive.google.com/file/d/1_GfCgB1u4dnGJR0bN5qHZg04Tl
 const Home: NextPage = () => {
   return (
     <BasePage>
-      <ProfileImageArea>
-        <ProfileImageBorder />
-        <Image
-          priority
-          width={144}
-          height={144}
-          quality={100}
-          css={profileImageStyle}
-          placeholder="empty"
-          layout="fixed"
-          src="/profile.webp"
-          alt="Bruna Ferri | Arquiteta"
-        />
-        <Image
-          priority
-          width={215}
-          height={215}
-          quality={100}
-          placeholder="empty"
-          layout="fixed"
-          src="/profile-name.webp"
-          alt="Te ajudo a descomplicar o pós faculdade. Projetando ambientes únicos e sofisticados"
-        />
-      </ProfileImageArea>
-
-      <br />
-      <br />
-
       <Flex as="article" w="full" justify="space-evenly" align="center">
         <CgFacebook size="2.4rem" css={socialMediaIcons} onClick={() => window.open(URL_SOCIAL_MEDIA_FB, '_blank')} />
         <BsInstagram
