@@ -65,10 +65,14 @@ const Home: NextPage = () => {
         </Box>
         <Box w="full" justifyContent="center" mt="2">
           <Text>
-            Arquiteta e Urbanista, atuando na área de projetos de interiores residenciais & arquitetônicos de alto
-            padrão, buscando transformar os ambientes em lares com autenticidade e funcionalidade, através de uma
-            arquitetura única e sofisticada, com um olhar atento às necessidades de cada cliente e tendências atuais.
+            Arquiteta e Urbanista, apaixonada por imagens renderizadas e pelo mundo dos projetos de interiores
+            residenciais. Iniciou sua paixão pelas maquetes eletrônicas há 5 anos, e, desde então, vem agregando um
+            vasto conhecimento na área. Em seus projetos busca transformar os ambientes em lares com autenticidade e
+            funcionalidade, através de uma arquitetura única e com alma, sempre prezando às necessidades de cada
+            cliente.
           </Text>
+          <br />
+          <br />
         </Box>
       </Flex>
     </BasePage>
