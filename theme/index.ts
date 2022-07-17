@@ -6,6 +6,10 @@ const theme = extendTheme(
     components: ['Button'],
   }),
   {
+    config: {
+      initialColorMode: 'light',
+      useSystemColorMode: true,
+    },
     fonts: {
       heading: `'Emperatriz', sans-serif`,
       body: `'Fira Sans', sans-serif`,
