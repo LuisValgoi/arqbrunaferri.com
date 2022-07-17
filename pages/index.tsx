@@ -5,9 +5,7 @@ import { CgFacebook } from 'react-icons/cg';
 import { FaPinterestP } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
 import { Box, Flex, Stack } from '@chakra-ui/react';
-import { Button, Heading, Text } from '../components/UI';
-
-import { socialMediaIcons } from '../styles';
+import { BoxCallout, Button, Heading, Icon, Text } from '../components/UI';
 
 const URL_SOCIAL_MEDIA_FB = 'https://www.facebook.com/arqbrunaferri';
 const URL_SOCIAL_MEDIA_INSTA = 'https://www.instagram.com/arqbrunaferri';
@@ -23,25 +21,15 @@ const Home: NextPage = () => {
   return (
     <BasePage>
       <Flex as="article" w="full" justify="space-evenly" align="center">
-        <CgFacebook size="2.4rem" css={socialMediaIcons} onClick={() => window.open(URL_SOCIAL_MEDIA_FB, '_blank')} />
-        <BsInstagram
-          size="2.8rem"
-          css={socialMediaIcons}
-          onClick={() => window.open(URL_SOCIAL_MEDIA_INSTA, '_blank')}
-        />
-        <FaPinterestP
-          size="2.4rem"
-          css={socialMediaIcons}
-          onClick={() => window.open(URL_SOCIAL_MEDIA_PIN, '_blank')}
-        />
+        <Icon Src={CgFacebook} size="2.4rem" onClick={() => window.open(URL_SOCIAL_MEDIA_FB, '_blank')} />
+        <Icon Src={BsInstagram} size="2.8rem" onClick={() => window.open(URL_SOCIAL_MEDIA_INSTA, '_blank')} />
+        <Icon Src={FaPinterestP} size="2.4rem" onClick={() => window.open(URL_SOCIAL_MEDIA_PIN, '_blank')} />
       </Flex>
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="4">
-        <Box bg="arqbrown.400" borderColor="arqbrown.400" px={4} py={2} border="2px" borderRadius="md">
-          <Heading fontSize="md" color="white">
-            EM QUE POSSO TE AJUDAR?
-          </Heading>
-        </Box>
+        <BoxCallout>
+          <Heading fontSize="sm">EM QUE POSSO TE AJUDAR?</Heading>
+        </BoxCallout>
       </Flex>
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">

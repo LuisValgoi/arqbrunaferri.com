@@ -2,8 +2,10 @@ import React from 'react';
 
 import Image from 'next/image';
 import { ProfileImageArea, ProfileImageBorder, profileImageStyle } from '../styles';
+import { useColorModeValue } from '@chakra-ui/react';
 
 const PageHeader: React.FC = () => {
+  const srcCircleName = useColorModeValue('/profile-name.webp', '/profile-name-dark.webp');
   return (
     <>
       <ProfileImageArea>
@@ -26,7 +28,7 @@ const PageHeader: React.FC = () => {
           quality={100}
           placeholder="empty"
           layout="fixed"
-          src="/profile-name.webp"
+          src={srcCircleName}
           alt="Te ajudo a descomplicar o pós faculdade. Projetando ambientes únicos e sofisticados"
         />
       </ProfileImageArea>

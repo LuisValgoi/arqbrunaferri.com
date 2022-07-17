@@ -1,38 +1,24 @@
-import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import { Box, Flex, Stack } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import BasePage from '../components/BasePage';
-import { DEFAULT_COLOR_ARQBROWN } from '../styles';
-import theme from '../theme';
+import { Button, Heading, Text } from '../components/UI';
 
 export default function FourOhFour() {
   return (
-    <BasePage>
-      <Heading color="arqbrown.300" fontSize="2xl">PÁGINA NÃO ENCONTRADA</Heading>
+    <BasePage stretch>
+      <Heading fontSize="2xl">PÁGINA NÃO ENCONTRADA</Heading>
 
       <Flex w="full" as="article" justify="center" align="center" flexDir="column">
         <Box w="full" justifyContent="center" mt="2">
-          <Text fontWeight="thin" color="gray.500">
-            Hmmm, não conseguimos encontrar a página que voce tentou acessar.
-          </Text>
+          <Text fontWeight="thin">Hmmm, não conseguimos encontrar a página que voce tentou acessar.</Text>
         </Box>
       </Flex>
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
         <Box w="full" justifyContent="center">
           <Link href="/">
-            <Button
-              w="40%"
-              variant="outline"
-              fontFamily="Emperatriz"
-              border="2px"
-              size="lg"
-              borderRadius="md"
-              borderColor="arqbrown.500"
-              _hover={{ bg: DEFAULT_COLOR_ARQBROWN, color: theme.colors.white, transform: 'scale(1.05)' }}
-            >
-              VOLTAR
-            </Button>
+            <Button w="40%">VOLTAR</Button>
           </Link>
         </Box>
       </Stack>

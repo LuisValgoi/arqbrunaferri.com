@@ -1,43 +1,16 @@
-import Head from 'next/head';
 import { PropsWithChildren } from 'react';
-import styled from '@emotion/styled';
 import { Flex } from '@chakra-ui/react';
+import Head from 'next/head';
 import PageHeader from './PageHeader';
-
-const Lines = styled.svg`
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.9)), url(/lines.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100vh;
-`;
-
-const Texture = styled.span`
-  background-color: rgb(250, 250, 250);
-  overflow-x: hidden;
-  opacity: 0.8;
-  background-size: 10px 10px;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgb(255, 255, 255) 0px,
-    rgb(255, 255, 255) 1px,
-    rgb(250, 250, 250) 0px,
-    rgb(250, 250, 250) 50%
-  );
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: -1;
-`;
+import ThemeSwitcher from './ThemeSwitcher';
+import Background from './Background';
 
 export type BasePageProps = PropsWithChildren & {
   title?: string;
   metaContent?: string;
   websiteUrl?: string;
   splashPath?: string;
+  stretch?: boolean;
 };
 
 const BasePage: React.FC<BasePageProps> = ({
@@ -46,6 +19,7 @@ const BasePage: React.FC<BasePageProps> = ({
   metaContent = 'Te ajudo a descomplicar o pós faculdade',
   websiteUrl = 'https://www.arqbrunaferri.com',
   splashPath = '/splash.webp',
+  stretch = false,
 }) => {
   return (
     <>
@@ -71,11 +45,11 @@ const BasePage: React.FC<BasePageProps> = ({
         <meta name="twitter:title" content={metaContent} />
         <meta name="twitter:image" content={splashPath} />
       </Head>
-      <Lines />
-      <Texture />
+      <Background stretch={stretch} />
       <Flex as="main" w="full" direction="column" align="center" justify="center">
         <Flex as="article" width={320} direction="column" maxW={320} textAlign="center">
           <PageHeader />
+          <ThemeSwitcher />
           {children}
         </Flex>
       </Flex>

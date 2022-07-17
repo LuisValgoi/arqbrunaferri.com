@@ -4,6 +4,8 @@ import theme from '../theme';
 
 export const DEFAULT_COLOR_ARQBROWN = theme.colors['arqbrown'][400];
 
+export const DEFAULT_COLOR_ARQBROWN_DARK = 'rgba(190, 135, 96, 0.12)';
+
 export const profileImageBorderSpin = keyframes`
 from {
   transform:rotate(0deg);
@@ -48,15 +50,4 @@ export const ProfileImageBorder = styled.span`
 
 export const profileImageStyle = css`
   border-radius: 50%;
-`;
-
-export const socialMediaIcons = css`
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: ${DEFAULT_COLOR_ARQBROWN};
-
-  &:hover {
-    transform: scale(1.05);
-    color: ${theme.colors['arqbrown'][500]};
-  }
 `;
