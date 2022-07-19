@@ -35,8 +35,8 @@ const Background: React.FC<{ stretch: boolean }> = ({ stretch }) => {
 
   return (
     <>
-      <Lines $stretch={stretch} $bgLines={bgLines} />
-      <Texture $stretch={stretch} $bgColor={bgColor} $bgImage={bgImage} />
+      <Lines id='background-line' $stretch={stretch} $bgLines={bgLines} />
+      <Texture id='background-texture' $stretch={stretch} $bgColor={bgColor} $bgImage={bgImage} />
     </>
   );
 };

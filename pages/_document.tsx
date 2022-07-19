@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-styled-jsx-in-document */
 import { ColorModeScript } from '@chakra-ui/react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import theme from '../theme';
@@ -6,7 +7,7 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head title='Bruna Ferri | Arquiteta | Te ajudo a descomplicar o pós faculdade'>
+        <Head title="Bruna Ferri | Arquiteta | Te ajudo a descomplicar o pós faculdade">
           <link rel="icon" href="/favicon.ico" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="canonical" href="https://www.arqbrunaferri.com" />
@@ -32,6 +33,25 @@ export default class Document extends NextDocument {
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
+          <style jsx global>{`
+            html,
+            body {
+              position: relative !important;
+              height: 100% !important;
+            }
+
+            #__next {
+              height: 100% !important;
+            }
+
+            .background-line {
+              height: 100% !important;
+            }
+
+            .background-texture {
+              height: 100% !important;
+            }
+          `}</style>
         </body>
       </Html>
     );
