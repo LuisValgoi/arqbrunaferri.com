@@ -7,11 +7,9 @@ const ThemeSwitcher = () => {
 
   return (
     <Button
+      aria-label="Theme Switcher"
       variant="outline"
       borderRadius={50}
-      position="absolute"
-      right={4}
-      top={4}
       padding={2}
       onClick={toggleColorMode}
       colorScheme="arqbrown"

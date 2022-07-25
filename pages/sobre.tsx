@@ -4,16 +4,22 @@ import NextLink from 'next/link';
 import BasePage from '../components/BasePage';
 import { Button, Heading, Text } from '../components/UI';
 
-export default function FourOhFour() {
+export default function Sobre() {
   return (
     <BasePage stretch>
       <Heading fontSize="2xl" textTransform="uppercase">
-        Página não Encontrada
+        Sobre
       </Heading>
 
       <Flex w="full" as="article" justify="center" align="center" flexDir="column">
         <Box w="full" justifyContent="center" mt="2">
-          <Text fontWeight="thin">Hmmm, não conseguimos encontrar a página que voce tentou acessar.</Text>
+          <Text fontWeight="thin">
+            Arquiteta e Urbanista, apaixonada por imagens renderizadas e pelo mundo dos projetos de interiores
+            residenciais. Iniciou sua paixão pelas maquetes eletrônicas há 5 anos, e, desde então, vem agregando um
+            vasto conhecimento na área. Em seus projetos busca transformar os ambientes em lares com autenticidade e
+            funcionalidade, através de uma arquitetura única e com alma, sempre prezando às necessidades de cada
+            cliente.
+          </Text>
         </Box>
       </Flex>
 

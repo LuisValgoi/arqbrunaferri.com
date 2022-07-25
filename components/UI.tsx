@@ -10,10 +10,8 @@ import {
   Box as BoxChakra,
   BoxProps,
   useColorModeValue,
+  forwardRef,
 } from '@chakra-ui/react';
-import { DEFAULT_COLOR_ARQBROWN, DEFAULT_COLOR_ARQBROWN_DARK } from '../styles';
-import { IconBaseProps, IconType } from 'react-icons';
-import { css } from '@emotion/react';
 
 export const Text: React.FC<TextProps> = ({ fontWeight = 'thin', ...props }) => {
   const colorTheme = useColorModeValue('gray.500', 'white');
@@ -24,6 +22,7 @@ export const Text: React.FC<TextProps> = ({ fontWeight = 'thin', ...props }) => 
     </TextChakra>
   );
 };
+Text.displayName = 'Text';
 
 export const Heading: React.FC<HeadingProps> = ({ fontSize = '2xl', ...props }) => {
   const colorTheme = useColorModeValue('arqbrown.400', 'arqbrown.100');
@@ -34,6 +33,7 @@ export const Heading: React.FC<HeadingProps> = ({ fontSize = '2xl', ...props }) 
     </HeadingChakra>
   );
 };
+Heading.displayName = 'Heading';
 
 export const BoxCallout: React.FC<BoxProps> = ({
   px = 4,
@@ -58,55 +58,47 @@ export const BoxCallout: React.FC<BoxProps> = ({
     </BoxChakra>
   );
 };
+BoxCallout.displayName = 'BoxCallout';
 
-export const Button: React.FC<ButtonProps> = ({
-  w = '90%',
-  variant = 'outline',
-  fontFamily = 'Emperatriz',
-  border = '2px',
-  size = 'lg',
-  borderRadius = 'md',
-  ...props
-}) => {
-  const colorTheme = useColorModeValue('arqbrown.400', 'white');
-  const borderColorTheme = useColorModeValue('arqbrown.500', 'arqbrown.100');
-  const _hoverTheme = useColorModeValue(
-    { bg: DEFAULT_COLOR_ARQBROWN, color: theme.colors.white, transform: 'scale(1.05)' },
-    { bg: DEFAULT_COLOR_ARQBROWN_DARK, color: theme.colors.white, transform: 'scale(1.05)' },
-  );
+export const Button = forwardRef<ButtonProps, 'button'>(
+  (
+    {
+      w = '90%',
+      variant = 'outline',
+      fontFamily = 'Emperatriz',
+      border = '2px',
+      size = 'lg',
+      borderRadius = 'md',
+      textTransform = 'uppercase',
+      ...props
+    },
+    ref,
+  ) => {
+    const colorTheme = useColorModeValue('arqbrown.400', 'white');
+    const borderColorTheme = useColorModeValue('arqbrown.500', 'arqbrown.100');
+    const _hoverTheme = useColorModeValue(
+      { bg: 'rgba(190, 135, 96, 0.12)', transform: 'scale(1.05)' },
+      { bg: 'rgba(190, 135, 96, 0.12)', color: theme.colors.white, transform: 'scale(1.05)' },
+    );
 
-  return (
-    <ButtonChakra
-      w={w}
-      variant={variant}
-      fontFamily={fontFamily}
-      border={border}
-      size={size}
-      borderRadius={borderRadius}
-      color={colorTheme}
-      borderColor={borderColorTheme}
-      _hover={_hoverTheme}
-      {...props}
-    >
-      {props.children}
-    </ButtonChakra>
-  );
-};
-
-type IconBasePropsUI = IconBaseProps & { Src: IconType; };
-export const Icon: React.FC<IconBasePropsUI> = ({ Src, size, ...props }) => {
-  const colorTheme = useColorModeValue(DEFAULT_COLOR_ARQBROWN, theme.colors['arqbrown'][100]);
-  const colorHoverTheme = useColorModeValue(theme.colors['arqbrown'][500], theme.colors['arqbrown'][200]);
-  const socialMediaIcons = css`
-    cursor: pointer;
-    transition: all 0.2s ease;
-    color: ${colorTheme};
-
-    &:hover {
-      transform: scale(1.05);
-      color: ${colorHoverTheme};
-    }
-  `;
-
-  return <Src {...props} size={size} css={socialMediaIcons} />;
-};
+    return (
+      <ButtonChakra
+        ref={ref}
+        w={w}
+        variant={variant}
+        fontFamily={fontFamily}
+        border={border}
+        size={size}
+        borderRadius={borderRadius}
+        textTransform={textTransform}
+        color={colorTheme}
+        borderColor={borderColorTheme}
+        _hover={_hoverTheme}
+        {...props}
+      >
+        {props.children}
+      </ButtonChakra>
+    );
+  },
+);
+Button.displayName = 'Button';

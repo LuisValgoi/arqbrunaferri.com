@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://arqbrunaferri.com/sitemap.xml
+Allow: /*/*.js
+Allow: /*/*.css 
 Host: https://arqbrunaferri.com/
+Sitemap: https://arqbrunaferri.com/sitemap.xml

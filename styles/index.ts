@@ -2,10 +2,6 @@ import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import theme from '../theme';
 
-export const DEFAULT_COLOR_ARQBROWN = theme.colors['arqbrown'][400];
-
-export const DEFAULT_COLOR_ARQBROWN_DARK = 'rgba(190, 135, 96, 0.12)';
-
 export const profileImageBorderSpin = keyframes`
 from {
   transform:rotate(0deg);
