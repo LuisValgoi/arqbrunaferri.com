@@ -7,6 +7,24 @@ import theme from '.';
 const Fonts: React.FC<PropsWithChildren> = () => (
   <Global
     styles={`
+    html,
+    body {
+      position: relative !important;
+      height: 100% !important;
+    }
+
+    #__next {
+      height: 100% !important;
+    }
+
+    .background-line {
+      height: 100% !important;
+    }
+
+    .background-texture {
+      height: 100% !important;
+    }
+
     @font-face {
         font-family: "Emperatriz";
         src: url("/fonts/emperatriz/emperatriz.woff") format("woff2"), url("/fonts/emperatriz/emperatriz.woff") format("woff");

@@ -45,25 +45,6 @@ export default class Document extends NextDocument {
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
-          <style jsx global>{`
-            html,
-            body {
-              position: relative !important;
-              height: 100% !important;
-            }
-
-            #__next {
-              height: 100% !important;
-            }
-
-            .background-line {
-              height: 100% !important;
-            }
-
-            .background-texture {
-              height: 100% !important;
-            }
-          `}</style>
         </body>
       </Html>
     );
