@@ -30,6 +30,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
         src: url("/fonts/emperatriz/emperatriz.woff") format("woff2"), url("/fonts/emperatriz/emperatriz.woff") format("woff");
         font-weight: normal;
         font-style: normal;
+        font-display: swap;
       }
 
     @font-face {
@@ -37,6 +38,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -44,6 +46,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-Bold.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Bold.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -51,6 +54,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-ExtraBold.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-ExtraBold.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -58,6 +62,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-ExtraLight.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-ExtraLight.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -65,6 +70,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-Light.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Light.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -72,6 +78,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-Medium.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Medium.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -79,6 +86,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Regular.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -86,6 +94,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-SemiBold.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-SemiBold.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
     
     @font-face {
@@ -93,6 +102,7 @@ const Fonts: React.FC<PropsWithChildren> = () => (
       src: url("/fonts/fira-sans/FiraSans-Thin.woff") format("woff2"), url("/fonts/fira-sans/FiraSans-Thin.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
       `}
   />
