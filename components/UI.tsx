@@ -35,30 +35,34 @@ export const Heading: React.FC<HeadingProps> = ({ fontSize = '2xl', ...props }) 
 };
 Heading.displayName = 'Heading';
 
-export const BoxCallout: React.FC<BoxProps> = ({
+export const HeadingCallout: React.FC<HeadingProps> = ({
+  fontSize = '2xl',
   px = 4,
   py = 2,
   borderWidth = '1px',
   borderRadius = 'md',
   ...props
 }) => {
+  const colorTheme = useColorModeValue('arqbrown.400', 'arqbrown.100');
   const borderColorTheme = useColorModeValue('arqbrown.400', 'arqbrown.100');
 
   return (
-    <BoxChakra
+    <HeadingChakra
       bg="unset"
       px={px}
       py={py}
       borderColor={borderColorTheme}
       borderWidth={borderWidth}
       borderRadius={borderRadius}
+      fontSize={fontSize}
+      color={colorTheme}
       {...props}
     >
       {props.children}
-    </BoxChakra>
+    </HeadingChakra>
   );
 };
-BoxCallout.displayName = 'BoxCallout';
+HeadingCallout.displayName = 'HeadingCallout';
 
 export const Button = forwardRef<ButtonProps, 'button'>(
   (

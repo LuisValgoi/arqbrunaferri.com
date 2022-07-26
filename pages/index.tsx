@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import BasePage from '../components/BasePage';
 
 import { Flex, Stack, useMediaQuery } from '@chakra-ui/react';
-import { BoxCallout, Button, Heading, Text } from '../components/UI';
+import { Button, Heading, HeadingCallout, Text } from '../components/UI';
 
 const Home: NextPage = () => {
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
@@ -11,11 +11,9 @@ const Home: NextPage = () => {
   return (
     <BasePage>
       <Flex w="full" as="article" justify="center" align="center" marginTop="4">
-        <BoxCallout>
-          <Heading fontSize="sm" textTransform="uppercase">
-            Em que posso te ajudar?
-          </Heading>
-        </BoxCallout>
+        <HeadingCallout fontSize="sm" textTransform="uppercase">
+          Em que posso te ajudar?
+        </HeadingCallout>
       </Flex>
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
