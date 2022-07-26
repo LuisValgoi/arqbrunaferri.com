@@ -17,3 +17,11 @@
 - ChakraUI.
 
 - Husky.
+
+# Get Started
+
+- Development: `yarn dev` (it runs @ [localhost:3001](http://localhost:3001/)).
+
+# Pre-Commit
+
+- It runs `yarn prettier:fix`.
