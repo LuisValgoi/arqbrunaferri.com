@@ -22,6 +22,7 @@ const PageHeader: React.FC = () => {
           alt="Bruna Ferri | Arquiteta"
         />
         <Image
+          priority
           width={215}
           height={215}
           quality={100}
