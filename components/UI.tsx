@@ -78,10 +78,10 @@ export const Button = forwardRef<ButtonProps, 'button'>(
     },
     ref,
   ) => {
-    const colorTheme = useColorModeValue('arqbrown.400', 'white');
+    const colorTheme = useColorModeValue(variant !== 'solid' ? 'arqbrown.400' : 'white', 'white');
     const borderColorTheme = useColorModeValue('arqbrown.500', 'arqbrown.100');
     const _hoverTheme = useColorModeValue(
-      { bg: 'rgba(190, 135, 96, 0.12)', transform: 'scale(1.05)' },
+      { bg: 'rgba(190, 135, 96, 0.12)', color: "arqbrown.400", transform: 'scale(1.05)' },
       { bg: 'rgba(190, 135, 96, 0.12)', color: theme.colors.white, transform: 'scale(1.05)' },
     );
 
