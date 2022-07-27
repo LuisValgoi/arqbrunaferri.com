@@ -1,6 +1,7 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import theme from '../theme';
+const ENV = process.env.NODE_ENV;
 
 export const rotateAnimation = keyframes`
   from {
@@ -42,7 +43,7 @@ export const profileImageStyle = css`
 `;
 
 export const letteringStyle = css`
-  font-size: 13.5px !important;
+  font-size: ${ENV === "development" ? "12px !important" : "13.5px important"};
   line-height: unset !important;
   position: absolute !important;
 

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 const CircleType = require('circletype');
 
 import Image from 'next/image';
@@ -9,7 +9,7 @@ const PageHeader: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const titleColor = useColorModeValue('arqbrown.500', 'arqbrown.50');
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     new CircleType(titleRef.current);
   }, []);
 
