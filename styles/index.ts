@@ -42,7 +42,7 @@ export const profileImageStyle = css`
 `;
 
 export const letteringStyle = css`
-  font-size: 12px !important;
+  font-size: 13.5px !important;
   line-height: unset !important;
   position: absolute !important;
 
