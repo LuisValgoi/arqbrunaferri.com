@@ -43,7 +43,7 @@ export const profileImageStyle = css`
 `;
 
 export const letteringStyle = css`
-  font-size: ${ENV === 'development' ? '12px !important' : '13.5px important'};
+  font-size: ${ENV === 'development' ? '12px !important' : '13.5px !important'};
   line-height: unset !important;
   position: absolute !important;
 
