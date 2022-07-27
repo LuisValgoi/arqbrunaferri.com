@@ -10,7 +10,7 @@ const PageHeader: React.FC = () => {
   const titleColor = useColorModeValue('arqbrown.500', 'arqbrown.50');
 
   useLayoutEffect(() => {
-    new CircleType(titleRef.current)
+    new CircleType(titleRef.current);
   }, []);
 
   return (

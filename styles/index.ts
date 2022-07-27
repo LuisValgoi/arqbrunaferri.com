@@ -17,7 +17,7 @@ export const ProfileImageArea = styled.article`
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  margin-bottom: 40px
+  margin-bottom: 40px;
 `;
 
 export const ProfileImageBorder = styled.span`
