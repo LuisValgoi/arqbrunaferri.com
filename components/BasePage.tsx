@@ -56,7 +56,7 @@ const BasePage: React.FC<BasePageProps> = ({
         <meta name="twitter:data1" content="5 minutos" />
       </Head>
       <Background stretch={stretch} />
-      <Flex as="main" w="full" direction="column" align="center" justify="center">
+      <Flex as="main" w="full" direction="column" align="center" justify="start">
         <Flex as="article" width={variantWidth} direction="column" maxW={variantWidth} textAlign="center">
           <PageHeader />
           <FloatingButtons />

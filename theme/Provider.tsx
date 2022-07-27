@@ -8,9 +8,11 @@ const Fonts: React.FC<PropsWithChildren> = () => (
   <Global
     styles={`
     html,
-    body {
+    body,
+    main {
       position: relative !important;
       height: 100% !important;
+      overflow-x: hidden !important;
     }
 
     #__next {
@@ -26,12 +28,36 @@ const Fonts: React.FC<PropsWithChildren> = () => (
     }
 
     @font-face {
-        font-family: "Emperatriz";
-        src: url("/fonts/emperatriz/emperatriz.woff") format("woff2"), url("/fonts/emperatriz/emperatriz.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
+      font-family: "Emperatriz";
+      src: url("/fonts/emperatriz/Emperatriz-Regular.woff") format("woff2"), url("/fonts/emperatriz/Emperatriz-Regular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Emperatriz Bold";
+      src: url("/fonts/emperatriz/Emperatriz-Bold.woff") format("woff2"), url("/fonts/emperatriz/Emperatriz-Bold.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Emperatriz Light";
+      src: url("/fonts/emperatriz/Emperatriz-Light.woff") format("woff2"), url("/fonts/emperatriz/Emperatriz-Light.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Emperatriz UltraLight";
+      src: url("/fonts/emperatriz/Emperatriz-UltraLight.woff") format("woff2"), url("/fonts/emperatriz/Emperatriz-UltraLight.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
     @font-face {
       font-family: "Fira Sans";

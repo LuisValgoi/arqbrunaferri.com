@@ -2,29 +2,22 @@ import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import theme from '../theme';
 
-export const profileImageBorderSpin = keyframes`
-from {
-  transform:rotate(0deg);
-}
-to {
-  transform:rotate(360deg);
-}
+export const rotateAnimation = keyframes`
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
 `;
 
-export const ProfileImageArea = styled.figure`
+export const ProfileImageArea = styled.article`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 44px;
-
-  & span:last-child {
-    position: absolute !important;
-    animation-name: ${profileImageBorderSpin};
-    animation-duration: 60000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
+  margin-top: 40px;
+  margin-bottom: 40px
 `;
 
 export const ProfileImageBorder = styled.span`
@@ -38,7 +31,7 @@ export const ProfileImageBorder = styled.span`
   width: 170px;
   height: 170px;
   position: absolute;
-  animation-name: ${profileImageBorderSpin};
+  animation-name: ${rotateAnimation};
   animation-duration: 10000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -46,4 +39,19 @@ export const ProfileImageBorder = styled.span`
 
 export const profileImageStyle = css`
   border-radius: 50%;
+`;
+
+export const letteringStyle = css`
+  font-size: 12px !important;
+  line-height: unset !important;
+  position: absolute !important;
+
+  animation-name: ${rotateAnimation};
+  animation-duration: 100000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  & div {
+    position: unset !important;
+  }
 `;

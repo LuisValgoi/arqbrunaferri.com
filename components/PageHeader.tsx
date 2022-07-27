@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
+const CircleType = require('circletype');
 
 import Image from 'next/image';
-import { ProfileImageArea, ProfileImageBorder, profileImageStyle } from '../styles';
-import { useColorModeValue } from '@chakra-ui/react';
+import { letteringStyle, ProfileImageArea, ProfileImageBorder, profileImageStyle } from '../styles';
+import { Heading, useColorModeValue } from '@chakra-ui/react';
 
 const PageHeader: React.FC = () => {
-  const srcCircleName = useColorModeValue('/profile-name.webp', '/profile-name-dark.webp');
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleColor = useColorModeValue('arqbrown.500', 'arqbrown.50');
+
+  useLayoutEffect(() => {
+    new CircleType(titleRef.current)
+  }, []);
+
   return (
     <>
       <ProfileImageArea>
@@ -21,20 +28,16 @@ const PageHeader: React.FC = () => {
           src="/logo.webp"
           alt="Bruna Ferri | Arquiteta"
         />
-        <Image
-          priority
-          width={215}
-          height={215}
-          quality={100}
-          placeholder="empty"
-          layout="fixed"
-          src={srcCircleName}
-          alt="Te ajudo a descomplicar o pós faculdade. Projetando ambientes únicos e sofisticados"
-        />
+        <Heading
+          ref={titleRef}
+          fontFamily="Fira Sans"
+          textTransform="uppercase"
+          css={letteringStyle}
+          color={titleColor}
+        >
+          Bruna Ferri Arquitetura & Interiores &#x2022; Bruna Ferri Arquitetura & Interiores &#x2022;
+        </Heading>
       </ProfileImageArea>
-
-      <br />
-      <br />
     </>
   );
 };
