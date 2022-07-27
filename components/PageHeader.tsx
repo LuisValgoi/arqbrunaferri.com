@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react';
 const CircleType = require('circletype');
 
 import Image from 'next/image';
-import { letteringStyle, ProfileImageArea, ProfileImageBorder, profileImageStyle } from '../styles';
-import { Heading, useColorModeValue } from '@chakra-ui/react';
+import { letteringStyleDesktop, letteringStyleMobile, ProfileImageArea, ProfileImageBorder, profileImageStyle } from '../styles';
+import { Heading, useColorModeValue, useMediaQuery } from '@chakra-ui/react';
 
 const PageHeader: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const titleColor = useColorModeValue('arqbrown.500', 'arqbrown.50');
+  const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
 
   useEffect(() => {
     new CircleType(titleRef.current);
@@ -32,7 +33,7 @@ const PageHeader: React.FC = () => {
           ref={titleRef}
           fontFamily="Fira Sans"
           textTransform="uppercase"
-          css={letteringStyle}
+          css={isLargerThan1280 ? letteringStyleDesktop : letteringStyleMobile}
           color={titleColor}
         >
           Bruna Ferri Arquitetura & Interiores &#x2022; Bruna Ferri Arquitetura & Interiores &#x2022;

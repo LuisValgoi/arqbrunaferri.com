@@ -42,8 +42,23 @@ export const profileImageStyle = css`
   border-radius: 50%;
 `;
 
-export const letteringStyle = css`
+export const letteringStyleDesktop = css`
   font-size: ${ENV === 'development' ? '12px !important' : '13.5px !important'};
+  line-height: unset !important;
+  position: absolute !important;
+
+  animation-name: ${rotateAnimation};
+  animation-duration: 100000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  & div {
+    position: unset !important;
+  }
+`;
+
+export const letteringStyleMobile = css`
+  font-size: 12px !important;
   line-height: unset !important;
   position: absolute !important;
 
