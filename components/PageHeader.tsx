@@ -8,7 +8,7 @@ import {
   ProfileImageArea,
   ProfileImageBorder,
   profileImageStyle,
-} from '../styles';
+} from '../styles/pages';
 import { Heading, useColorModeValue, useMediaQuery } from '@chakra-ui/react';
 
 const PageHeader: React.FC = () => {
