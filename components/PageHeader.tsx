@@ -2,7 +2,13 @@ import React, { useEffect, useRef } from 'react';
 const CircleType = require('circletype');
 
 import Image from 'next/image';
-import { letteringStyleDesktop, letteringStyleMobile, ProfileImageArea, ProfileImageBorder, profileImageStyle } from '../styles';
+import {
+  letteringStyleDesktop,
+  letteringStyleMobile,
+  ProfileImageArea,
+  ProfileImageBorder,
+  profileImageStyle,
+} from '../styles';
 import { Heading, useColorModeValue, useMediaQuery } from '@chakra-ui/react';
 
 const PageHeader: React.FC = () => {
