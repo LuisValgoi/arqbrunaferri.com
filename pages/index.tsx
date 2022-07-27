@@ -1,9 +1,12 @@
 import type { NextPage } from 'next';
 import NextLink from 'next/link';
+
 import BasePage from '../components/BasePage';
 
 import { Flex, Stack, useMediaQuery } from '@chakra-ui/react';
+
 import { Button, Heading, HeadingCallout, Text } from '../components/UI';
+import JoinCommunity from '../components/JoinCommunity';
 
 const Home: NextPage = () => {
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
@@ -34,6 +37,8 @@ const Home: NextPage = () => {
             Entrar em Contato
           </Button>
         </NextLink>
+
+        <JoinCommunity />
       </Stack>
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="6" flexDir="column">
