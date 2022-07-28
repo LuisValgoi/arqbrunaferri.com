@@ -23,14 +23,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/render',
-        destination:
-          'https://api.whatsapp.com/send?phone=5551981909312&text=Ola,%20como%20funciona%20o%20seu%20servico%20de%20render?%20',
-        permanent: true,
-      },
-      {
         source: '/contato',
-        destination: 'mailto:arqbrunaferri@gmail.com',
+        destination: 'https://api.whatsapp.com/send?phone=5551981909312&text=Ola,%20gostaria%20de%20tirar%20uma%20duvida%20sobre%20seus%20servicos',
         permanent: true,
       },
     ];
