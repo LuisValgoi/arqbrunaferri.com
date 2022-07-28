@@ -40,7 +40,7 @@ async function handleSaveLead(email: Prisma.LeadCreateInput) {
     email,
   };
 
-  const response = await fetch('/api/comunidade', {
+  const response = await fetch('/api/lead', {
     method: 'POST',
     body: JSON.stringify(record),
   });
@@ -86,7 +86,7 @@ const JoinCommunity: React.FC = () => {
           height={12}
           onClick={onToggle}
           leftIcon={isOpen ? <FaLockOpen /> : <FaLock />}
-          aria-label="Entrar na Comunidade"
+          aria-label="Comunidade Renderize"
         >
           Comunidade Renderize
         </Button>
