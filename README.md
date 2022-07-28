@@ -32,35 +32,29 @@
 
 - It runs `yarn prettier:fix`.
 
-<!--
-# Instructions
+# PlanetScale Commands
 
-brew install planetscale/tap/pscale
+- `pscale auth login`: to login.
+- `pscale branch create arqbrunaferri shadow`: to create a database env.
+- `pscale connect arqbrunaferri main --port 3309`: to connect @ 3309.
+- `pscale connect arqbrunaferri shadow --port 3310`: to connect @ 3310.
+- `pscale deploy-request create arqbrunaferri shadow`: to start promoting SHADOW changes to PROD.
 
-pscale auth login -> confirm the code
+# Prisma Commands
 
-pscale connect arqbrunaferri main --port 3309
+- `npx prisma init`: to initiate the prisma project.
+- `npx prisma migrate dev`: to start a new migration.
+- `npx prisma migrate reset`: to reset the migrations done so far.
+- `npx prisma generate`: to generate the types from the model.
+- `npx prisma studio`: to open locally the database client.
 
-pscale branch create arqbrunaferri shadow
 
-pscale connect arqbrunaferri shadow --port 3310
+# Local Env 
 
-DATABASE_URL="mysql://root@127.0.0.1:3309/arqbrunaferri"
+```
+    DATABASE_URL="mysql://root@127.0.0.1:3309/arqbrunaferri"
+    SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3310/arqbrunaferri"
+```
+# Secrets Infos
 
-SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3310/arqbrunaferri"
-
-yarn add prisma @prisma/client
-
-npx prisma init -> create models
-
-npx prisma migrate dev -> connected to the main -> init (migration name)
-
-npx prisma migrate reset -> y (if necessary)
-
-npx prisma studio -> http://localhost:5555/
-
-npx prisma generate -> implemente the /api/...
-
-check @ http://localhost:3001/api/...
-
- -->
+- [NOTION](https://www.notion.so/ARQBRUNAFERRI-SECRETS-4a94212eb353418ab42307d0d38baf4b)
