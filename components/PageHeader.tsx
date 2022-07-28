@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 const CircleType = require('circletype');
 
 import Image from 'next/image';
@@ -15,9 +15,16 @@ const PageHeader: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const titleColor = useColorModeValue('arqbrown.500', 'arqbrown.50');
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
+  const [letteringShown, setLetteringShown] = useState(false);
 
   useEffect(() => {
-    new CircleType(titleRef.current);
+    if (letteringShown) new CircleType(titleRef.current);
+  }, [letteringShown]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLetteringShown(true);
+    }, 500);
   }, []);
 
   return (
@@ -35,15 +42,17 @@ const PageHeader: React.FC = () => {
           src="/logo.webp"
           alt="Bruna Ferri | Arquiteta"
         />
-        <Heading
-          ref={titleRef}
-          fontFamily="Fira Sans"
-          textTransform="uppercase"
-          css={isLargerThan1280 ? letteringStyleDesktop : letteringStyleMobile}
-          color={titleColor}
-        >
-          Bruna Ferri Arquitetura & Interiores &#x2022; Bruna Ferri Arquitetura & Interiores &#x2022;
-        </Heading>
+        {letteringShown && (
+          <Heading
+            ref={titleRef}
+            fontFamily="Fira Sans"
+            textTransform="uppercase"
+            css={isLargerThan1280 ? letteringStyleDesktop : letteringStyleMobile}
+            color={titleColor}
+          >
+            Bruna Ferri Arquitetura & Interiores &#x2022; Bruna Ferri Arquitetura & Interiores &#x2022;
+          </Heading>
+        )}
       </ProfileImageArea>
     </>
   );
