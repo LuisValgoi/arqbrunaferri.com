@@ -2,11 +2,10 @@ import type { NextPage } from 'next';
 import NextLink from 'next/link';
 
 import BasePage from '../components/BasePage';
+import JoinCommunity from '../components/JoinCommunity';
 
 import { Flex, Stack, useMediaQuery } from '@chakra-ui/react';
-
 import { Button, Heading, HeadingCallout, Text } from '../components/UI';
-import JoinCommunity from '../components/JoinCommunity';
 
 const Home: NextPage = () => {
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
@@ -20,6 +19,8 @@ const Home: NextPage = () => {
       </Flex>
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
+        <JoinCommunity />
+
         <NextLink href="/orcamento" passHref>
           <Button aria-label="Solicitar Orçamento" target="_blank" as="a" w="72" justifyContent="center">
             Solicitar Orçamento
@@ -37,8 +38,6 @@ const Home: NextPage = () => {
             Entrar em Contato
           </Button>
         </NextLink>
-
-        <JoinCommunity />
       </Stack>
 
       <Flex w="full" as="article" justify="center" align="center" marginTop="6" flexDir="column">
