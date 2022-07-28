@@ -48,13 +48,13 @@
 - `npx prisma generate`: to generate the types from the model.
 - `npx prisma studio`: to open locally the database client.
 
-
-# Local Env 
+# Local Env
 
 ```
     DATABASE_URL="mysql://root@127.0.0.1:3309/arqbrunaferri"
     SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3310/arqbrunaferri"
 ```
+
 # Secrets Infos
 
 - [NOTION](https://www.notion.so/ARQBRUNAFERRI-SECRETS-4a94212eb353418ab42307d0d38baf4b)
