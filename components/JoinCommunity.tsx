@@ -68,6 +68,7 @@ const JoinCommunity: React.FC = () => {
         status: 'success',
         duration: 2000,
         isClosable: false,
+        position: 'top',
         onCloseComplete: () => window.open('https://t.me/joinchat/AAAAAEggPUctnh4xk5bAFw', '_blank'),
       });
     },
