@@ -18,6 +18,12 @@
 
 - Husky.
 
+- Prisma.
+
+- PlanetScale.
+
+- Formik.
+
 # Get Started
 
 - Development: `yarn dev` (it runs @ [localhost:3001](http://localhost:3001/)).
@@ -25,3 +31,36 @@
 # Pre-Commit
 
 - It runs `yarn prettier:fix`.
+
+<!--
+# Instructions
+
+brew install planetscale/tap/pscale
+
+pscale auth login -> confirm the code
+
+pscale connect arqbrunaferri main --port 3309
+
+pscale branch create arqbrunaferri shadow
+
+pscale connect arqbrunaferri shadow --port 3310
+
+DATABASE_URL="mysql://root@127.0.0.1:3309/arqbrunaferri"
+
+SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3310/arqbrunaferri"
+
+yarn add prisma @prisma/client
+
+npx prisma init -> create models
+
+npx prisma migrate dev -> connected to the main -> init (migration name)
+
+npx prisma migrate reset -> y (if necessary)
+
+npx prisma studio -> http://localhost:5555/
+
+npx prisma generate -> implemente the /api/...
+
+check @ http://localhost:3001/api/...
+
+ -->

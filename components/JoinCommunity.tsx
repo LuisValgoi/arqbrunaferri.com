@@ -1,9 +1,8 @@
 import React, { useCallback } from 'react';
-import { css } from '@emotion/react';
+import { Prisma } from '@prisma/client';
 
 import {
   FormControl,
-  FormErrorMessage,
   IconButton,
   Input,
   Popover,
@@ -21,29 +20,46 @@ import { AiOutlineSend } from 'react-icons/ai';
 import { sendButtonCommunity } from '../styles/components/JoinCommunity';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 
-const EMAIL_PATTERN =
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
 interface JoinCommunityFormValues {
   email: string;
 }
 
-const JoinCommunityFormInitialValues = { email: '' } as JoinCommunityFormValues;
+const EMAIL_PATTERN =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+function handleEmailValidation(value: string) {
+  return !value || !EMAIL_PATTERN.test(value);
+}
+
+async function handleSaveLead(email: Prisma.LeadCreateInput) {
+  const record = {
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    email,
+  };
+
+  const response = await fetch('/api/comunidade', {
+    method: 'POST',
+    body: JSON.stringify(record),
+  });
+
+  if (!response.ok) {
+    alert(response.statusText);
+  }
+
+  return await response.json();
+}
 
 const JoinCommunity: React.FC = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
 
-  const handleEmailValidation = useCallback((value: string) => {
-    return !value || !EMAIL_PATTERN.test(value);
-  }, []);
-
   const handleOnSubmit = useCallback(
-    (values: FormikValues, formikHelpers: FormikHelpers<JoinCommunityFormValues>) => {
-      setTimeout(() => {
-        formikHelpers.setSubmitting(false);
-        onClose();
-        alert(JSON.stringify(values.email));
-      }, 1000);
+    async (values: FormikValues, formikHelpers: FormikHelpers<JoinCommunityFormValues>) => {
+      formikHelpers.setSubmitting(true);
+      await handleSaveLead(values.email);
+      formikHelpers.setSubmitting(false);
+      onClose();
+      alert('opa!');
     },
     [onClose],
   );
@@ -55,12 +71,12 @@ const JoinCommunity: React.FC = () => {
           variant="solid"
           fontFamily="Emperatriz"
           textTransform="uppercase"
-          aria-label="Entrar na Comunidade"
+          justifyContent="center"
           w="72"
           height={12}
-          justifyContent="center"
-          leftIcon={isOpen ? <FaLockOpen /> : <FaLock />}
           onClick={onToggle}
+          leftIcon={isOpen ? <FaLockOpen /> : <FaLock />}
+          aria-label="Entrar na Comunidade"
         >
           Comunidade Renderize
         </Button>
@@ -71,7 +87,7 @@ const JoinCommunity: React.FC = () => {
 
         <PopoverBody>Só me confirma teu e-mail...</PopoverBody>
 
-        <Formik initialValues={JoinCommunityFormInitialValues} onSubmit={handleOnSubmit}>
+        <Formik initialValues={{ email: '' } as JoinCommunityFormValues} onSubmit={handleOnSubmit}>
           {(props) => (
             <Form>
               <Stack direction="row">
