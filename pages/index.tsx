@@ -6,7 +6,7 @@ import JoinCommunity from '../components/JoinCommunity';
 
 import { Flex, Stack, useMediaQuery } from '@chakra-ui/react';
 import { Button, Heading, HeadingCallout, Text } from '../components/UI';
-import { BsPencilFill, BsWhatsapp } from "react-icons/bs";
+import { BsPencilFill, BsWhatsapp } from 'react-icons/bs';
 
 const Home: NextPage = () => {
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
@@ -23,13 +23,27 @@ const Home: NextPage = () => {
         <JoinCommunity />
 
         <NextLink href="/orcamento" passHref>
-          <Button aria-label="Solicitar Orçamento" target="_blank" as="a" w="72" justifyContent="center" leftIcon={<BsPencilFill />}>
+          <Button
+            aria-label="Solicitar Orçamento"
+            target="_blank"
+            as="a"
+            w="72"
+            justifyContent="center"
+            leftIcon={<BsPencilFill />}
+          >
             Solicitar Orçamento
           </Button>
         </NextLink>
 
         <NextLink href="/contato" passHref>
-          <Button aria-label="Entrar em Contato" target="_blank" as="a" w="72" justifyContent="center" leftIcon={<BsWhatsapp />}>
+          <Button
+            aria-label="Entrar em Contato"
+            target="_blank"
+            as="a"
+            w="72"
+            justifyContent="center"
+            leftIcon={<BsWhatsapp />}
+          >
             Entrar em Contato
           </Button>
         </NextLink>

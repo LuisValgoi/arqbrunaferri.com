@@ -24,7 +24,8 @@ const nextConfig = {
       },
       {
         source: '/contato',
-        destination: 'https://api.whatsapp.com/send?phone=5551981909312&text=Ola,%20gostaria%20de%20tirar%20uma%20duvida%20sobre%20seus%20servicos',
+        destination:
+          'https://api.whatsapp.com/send?phone=5551981909312&text=Ola,%20gostaria%20de%20tirar%20uma%20duvida%20sobre%20seus%20servicos...',
         permanent: true,
       },
     ];
