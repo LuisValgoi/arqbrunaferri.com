@@ -20,7 +20,7 @@
 # Get Started
 
 - Frontend: `yarn dev`.
-- PlanetScale: `pscale connect arqbrunaferri main --port 3309` + `pscale connect arqbrunaferri main --port 3310`.
+- PlanetScale: `pscale connect arqbrunaferri shadow --port 3309`.
 - Prisma Studio: `npx prisma studio`.
 
 # Pre-Commit
