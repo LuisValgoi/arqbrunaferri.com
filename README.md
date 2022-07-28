@@ -9,24 +9,19 @@
 # Stack
 
 - NextJS.
-
 - Typescript.
-
 - Emotion.
-
 - ChakraUI.
-
 - Husky.
-
 - Prisma.
-
 - PlanetScale.
-
 - Formik.
 
 # Get Started
 
-- Development: `yarn dev` (it runs @ [localhost:3001](http://localhost:3001/)).
+- Frontend: `yarn dev`.
+- PlanetScale: `pscale connect arqbrunaferri main --port 3309` + `pscale connect arqbrunaferri main --port 3310`.
+- Prisma Studio: `npx prisma studio`.
 
 # Pre-Commit
 
