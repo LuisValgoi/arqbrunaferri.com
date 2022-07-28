@@ -12,6 +12,7 @@ import {
   PopoverTrigger,
   Stack,
   useDisclosure,
+  useToast,
 } from '@chakra-ui/react';
 
 import { Button } from './UI';
@@ -19,6 +20,7 @@ import { Field, FieldProps, Form, Formik, FormikHelpers, FormikValues } from 'fo
 import { AiOutlineSend } from 'react-icons/ai';
 import { sendButtonCommunity } from '../styles/components/JoinCommunity';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
 interface JoinCommunityFormValues {
   email: string;
@@ -52,6 +54,7 @@ async function handleSaveLead(email: Prisma.LeadCreateInput) {
 
 const JoinCommunity: React.FC = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
+  const toast = useToast();
 
   const handleOnSubmit = useCallback(
     async (values: FormikValues, formikHelpers: FormikHelpers<JoinCommunityFormValues>) => {
@@ -59,9 +62,16 @@ const JoinCommunity: React.FC = () => {
       await handleSaveLead(values.email);
       formikHelpers.setSubmitting(false);
       onClose();
-      alert('opa!');
+      toast({
+        title: 'Muito Obrigada!',
+        description: 'Você será redirecionada em breve!',
+        status: 'success',
+        duration: 2000,
+        isClosable: false,
+        onCloseComplete: () => window.open('https://t.me/joinchat/AAAAAEggPUctnh4xk5bAFw', '_blank'),
+      });
     },
-    [onClose],
+    [onClose, toast],
   );
 
   return (
