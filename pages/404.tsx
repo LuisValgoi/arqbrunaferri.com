@@ -13,7 +13,7 @@ export default function FourOhFour() {
 
       <Flex w="full" as="article" justify="center" align="center" flexDir="column">
         <Box w="full" justifyContent="center" mt="2">
-          <Text fontWeight="thin">Hmmm, não conseguimos encontrar a página que voce tentou acessar.</Text>
+          <Text fontWeight="thin">Hmmm, não conseguimos encontrar a página que você tentou acessar.</Text>
         </Box>
       </Flex>
 
