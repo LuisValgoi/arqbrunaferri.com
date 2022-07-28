@@ -31,8 +31,8 @@
 
 - `pscale auth login`: to login.
 - `pscale branch create arqbrunaferri shadow`: to create a database env.
-- `pscale connect arqbrunaferri main --port 3309`: to connect @ 3309.
-- `pscale connect arqbrunaferri shadow --port 3310`: to connect @ 3310.
+- `pscale connect arqbrunaferri main --port 3309`: to connect @ 3309 to the main db.
+- `pscale connect arqbrunaferri shadow --port 3309`: to connect @ 3309 to the shadow db.
 - `pscale deploy-request create arqbrunaferri shadow`: to start promoting SHADOW changes to PROD.
 
 # Prisma Commands
