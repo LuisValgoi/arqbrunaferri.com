@@ -18,8 +18,8 @@ import {
 import { Button } from './UI';
 import { Field, FieldProps, Form, Formik, FormikHelpers, FormikValues } from 'formik';
 import { AiOutlineSend } from 'react-icons/ai';
-import { BiLockAlt, BiLockOpenAlt } from 'react-icons/bi';
 import { sendButtonCommunity } from '../styles/components/JoinCommunity';
+import { FaLock, FaLockOpen } from 'react-icons/fa';
 
 const EMAIL_PATTERN =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -59,7 +59,7 @@ const JoinCommunity: React.FC = () => {
           w="72"
           height={12}
           justifyContent="center"
-          leftIcon={isOpen ? <BiLockOpenAlt /> : <BiLockAlt />}
+          leftIcon={isOpen ? <FaLockOpen /> : <FaLock />}
           onClick={onToggle}
         >
           Comunidade Renderize
