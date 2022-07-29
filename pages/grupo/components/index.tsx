@@ -27,6 +27,6 @@ const GrupoComp = () => {
       </Stack>
     </>
   );
-}
+};
 
 export default GrupoComp;

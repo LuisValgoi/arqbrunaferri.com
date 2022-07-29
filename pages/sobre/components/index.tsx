@@ -31,6 +31,6 @@ const SobreComp = () => {
       </Stack>
     </>
   );
-}
+};
 
 export default SobreComp;

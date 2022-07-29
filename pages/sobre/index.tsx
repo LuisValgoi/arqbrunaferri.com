@@ -9,6 +9,6 @@ const Sobre: NextPage = () => {
       <SobreComp />
     </BasePage>
   );
-}
+};
 
 export default Sobre;
