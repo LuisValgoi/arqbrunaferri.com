@@ -43,7 +43,7 @@ const HomeComp = (props: HomeCompProps) => {
           <PopoverContent p={2}>
             <PopoverArrow />
             <PopoverBody>Só me confirma teu e-mail...</PopoverBody>
-            <JoinCommunityField finallyCallback={props.onPopoverClose} />
+            <JoinCommunityField finallyCallback={props.onPopoverClose} autoFocusEmail={props.isOpen} />
           </PopoverContent>
         </Popover>
 

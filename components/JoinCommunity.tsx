@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 import { FormControl, IconButton, Input, Stack, useToast } from '@chakra-ui/react';
 import { Field, FieldProps, Form, Formik, FormikHelpers, FormikValues } from 'formik';
@@ -6,21 +6,6 @@ import { AiOutlineSend } from 'react-icons/ai';
 import { Prisma } from '@prisma/client';
 
 import { css } from '@emotion/react';
-
-export interface JoinCommunityFormValues {
-  email: string;
-}
-
-export interface JoinCommunityProps {
-  finallyCallback?: () => void;
-}
-
-const EMAIL_PATTERN =
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-const handleEmailValidation = (value: string) => {
-  return !value || !EMAIL_PATTERN.test(value);
-};
 
 const sendButtonCommunity = css`
   transition: all 0.5s ease;
@@ -34,8 +19,30 @@ const sendButtonCommunity = css`
   }
 `;
 
-const JoinCommunity: React.FC<JoinCommunityProps> = (props) => {
+export interface JoinCommunityFormValues {
+  email: string;
+}
+
+export interface JoinCommunityProps {
+  autoFocusEmail?: boolean;
+  finallyCallback?: () => void;
+}
+
+const EMAIL_PATTERN =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const handleEmailValidation = (value: string) => {
+  return !value || !EMAIL_PATTERN.test(value);
+};
+
+const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocusEmail }) => {
   const toast = useToast();
+  const emailRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (autoFocusEmail)
+      setTimeout(() => emailRef.current?.focus(), 100);
+  }, [autoFocusEmail])
 
   const handleSaveLead = useCallback(async (email: Prisma.LeadCreateInput) => {
     const response = await fetch('/api/lead', {
@@ -79,10 +86,10 @@ const JoinCommunity: React.FC<JoinCommunityProps> = (props) => {
         });
       } finally {
         formikHelpers.setSubmitting(false);
-        props?.finallyCallback?.();
+        finallyCallback?.();
       }
     },
-    [handleSaveLead, props, toast],
+    [finallyCallback, handleSaveLead, toast],
   );
 
   return (
@@ -95,9 +102,13 @@ const JoinCommunity: React.FC<JoinCommunityProps> = (props) => {
                 <FormControl isInvalid={!!(props.form.errors.email && props.form.touched.email)}>
                   <Input
                     {...props.field}
+                    ref={emailRef}
                     value={props.form.values.email}
                     placeholder="Ex: arqbrunaferri@gmail.com"
-                    focusBorderColor="arqbrown.300"
+                    backgroundColor="white"
+                    focusBorderColor="arqbrown.500"
+                    borderColor="arqbrown.300"
+                    _placeholder={{ opacity: 0.3 }}
                     w="full"
                   />
                 </FormControl>

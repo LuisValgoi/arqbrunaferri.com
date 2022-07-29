@@ -23,7 +23,7 @@ const GrupoComp = () => {
       </Flex>
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
-        <JoinCommunity />
+        <JoinCommunity autoFocusEmail />
       </Stack>
     </>
   );
