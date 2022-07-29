@@ -40,9 +40,8 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
   const emailRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (autoFocusEmail)
-      setTimeout(() => emailRef.current?.focus(), 100);
-  }, [autoFocusEmail])
+    if (autoFocusEmail) setTimeout(() => emailRef.current?.focus(), 100);
+  }, [autoFocusEmail]);
 
   const handleSaveLead = useCallback(async (email: Prisma.LeadCreateInput) => {
     const response = await fetch('/api/lead', {
