@@ -39,7 +39,7 @@ const PageHeader: React.FC = () => {
           css={profileImageStyle}
           placeholder="empty"
           layout="fixed"
-          src="/logo.webp"
+          src="/logo.png"
           alt="Bruna Ferri | Arquiteta"
         />
         {letteringShown && (

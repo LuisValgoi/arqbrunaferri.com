@@ -20,7 +20,6 @@ import { Field, FieldProps, Form, Formik, FormikHelpers, FormikValues } from 'fo
 import { AiOutlineSend } from 'react-icons/ai';
 import { sendButtonCommunity } from '../styles/components/JoinCommunity';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
-import { useRouter } from 'next/router';
 
 interface JoinCommunityFormValues {
   email: string;
@@ -53,8 +52,8 @@ async function handleSaveLead(email: Prisma.LeadCreateInput) {
 }
 
 const JoinCommunity: React.FC = () => {
-  const { isOpen, onToggle, onClose } = useDisclosure();
   const toast = useToast();
+  const { isOpen, onToggle, onClose } = useDisclosure();
 
   const handleOnSubmit = useCallback(
     async (values: FormikValues, formikHelpers: FormikHelpers<JoinCommunityFormValues>) => {
