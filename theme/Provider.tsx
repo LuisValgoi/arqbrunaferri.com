@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 
-import theme from '.';
+import theme from '@/theme/index';
 
 const Fonts: React.FC<PropsWithChildren> = () => (
   <Global

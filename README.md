@@ -20,7 +20,7 @@
 # Get Started
 
 - Frontend: `yarn dev` (http://localhost:3001/).
-- PlanetScale: `pscale connect arqbrunaferri shadow --port 3309` (https://app.planetscale.com/luisvalgoi).
+- PlanetScale: `pscale connect arqbrunaferri shadow --port 3310` (https://app.planetscale.com/luisvalgoi).
 - Prisma Studio: `npx prisma studio` (http://localhost:5555/).
 
 # Pre-Commit
@@ -31,8 +31,8 @@
 
 - `pscale auth login`: to login.
 - `pscale branch create arqbrunaferri shadow`: to create a database env.
-- `pscale connect arqbrunaferri main --port 3309`: to connect @ 3309 to the main db.
-- `pscale connect arqbrunaferri shadow --port 3309`: to connect @ 3309 to the shadow db.
+- `pscale connect arqbrunaferri shadow --port 3310`: to connect @ 3310 to the shadow db.
+- `pscale connect arqbrunaferri main --port 3310`: to connect @ 3310 to the main db.
 - `pscale deploy-request create arqbrunaferri shadow`: to start promoting SHADOW changes to PROD.
 
 # Prisma Commands
@@ -46,8 +46,8 @@
 # Local Env
 
 ```
-    DATABASE_URL="mysql://root@127.0.0.1:3309/arqbrunaferri"
-    SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3310/arqbrunaferri"
+    SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3309/arqbrunaferri"
+    DATABASE_URL="mysql://root@127.0.0.1:3310/arqbrunaferri"
 ```
 
 # Secrets Infos

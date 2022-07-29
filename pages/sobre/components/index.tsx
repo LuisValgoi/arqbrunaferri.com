@@ -1,12 +1,11 @@
-import { Box, Flex, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import BasePage from '../components/BasePage';
-import { Button, Heading, Text } from '../components/UI';
+import { Box, Flex, Stack } from '@chakra-ui/react';
+import { Heading, Text, Button } from '@/components/UI';
 
-export default function Sobre() {
+const SobreComp = () => {
   return (
-    <BasePage stretch>
+    <>
       <Heading fontSize="2xl" textTransform="uppercase">
         Sobre
       </Heading>
@@ -30,6 +29,8 @@ export default function Sobre() {
           </Button>
         </NextLink>
       </Stack>
-    </BasePage>
+    </>
   );
 }
+
+export default SobreComp;

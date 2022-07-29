@@ -1,12 +1,11 @@
-import { Box, Flex, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import BasePage from '../components/BasePage';
-import { Button, Heading, Text } from '../components/UI';
+import { Box, Flex, Stack } from '@chakra-ui/react';
+import { Button, Heading, Text } from '@/components/UI';
 
-export default function FourOhFour() {
+const FourOhFourComp = () => {
   return (
-    <BasePage stretch>
+    <>
       <Heading fontSize="2xl" textTransform="uppercase">
         Página não Encontrada
       </Heading>
@@ -24,6 +23,8 @@ export default function FourOhFour() {
           </Button>
         </NextLink>
       </Stack>
-    </BasePage>
+    </>
   );
-}
+};
+
+export default FourOhFourComp;

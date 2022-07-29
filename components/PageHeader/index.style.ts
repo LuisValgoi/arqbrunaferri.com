@@ -1,7 +1,6 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import theme from '../../theme';
-const ENV = process.env.NODE_ENV;
+import theme from 'theme';
 
 export const rotateAnimation = keyframes`
   from {

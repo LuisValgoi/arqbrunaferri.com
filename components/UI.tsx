@@ -1,5 +1,5 @@
 import React from 'react';
-import theme from '../theme';
+import theme from '@/theme/index';
 import {
   Text as TextChakra,
   TextProps,
