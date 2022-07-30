@@ -1,31 +1,114 @@
-import { Box, Flex, Stack } from '@chakra-ui/react';
+import Image from 'next/image';
 
 import JoinCommunity from '@/components/JoinCommunity';
+import { Stack, useColorModeValue, useMediaQuery } from '@chakra-ui/react';
 import { Heading, Text } from '@/components/UI';
+import { css } from '@emotion/react';
+
+const cardInternalCSSLight = css`
+  margin-inline-start: 0 !important;
+  background: linear-gradient(180deg, #7d5138 -14.07%, #3c312b 137.12%);
+`;
+
+const cardInternalCSSDark = css`
+  margin-inline-start: 0 !important;
+  background: linear-gradient(180deg, #d0a88b -14.07%, #744c2f 137.12%);
+`;
+
+const cardBgLight = css`
+  background: linear-gradient(180deg, #efe7e2 -14.07%, #d3b8a8 137.12%);
+`;
+
+const cardBgDark = css`
+  background: linear-gradient(180deg, #3a2617 -14.07%, #492f1d 137.12%);
+`;
+
+const brunaWrapperCSS = css`
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const Line = () => (
+  <Stack
+    height="full"
+    borderRadius={18}
+    borderWidth={3}
+    borderColor="arqbrown.300"
+    position="absolute"
+    top="-4"
+    right="-4"
+    w="full"
+    zIndex="-1"
+  />
+);
 
 const GrupoComp = () => {
+  const cardInternal = useColorModeValue(cardInternalCSSLight, cardInternalCSSDark);
+  const cardBg = useColorModeValue(cardBgLight, cardBgDark);
+  const [shouldBreakTitle] = useMediaQuery('(max-width: 1279px)');
+
   return (
-    <>
-      <Heading fontSize="2xl" textTransform="uppercase">
-        Grupo Renderizando
-      </Heading>
+    <Stack as="article" p={8} width={['90%', '80%', '70%', '60%', 'container.lg']}>
+      <Stack display="flex" direction="row" borderRadius={18} css={cardBg} position="relative" width="full">
+        <Line />
+        <Stack
+          display="flex"
+          direction="column"
+          borderRadius={18}
+          p={18}
+          css={cardInternal}
+          width={['100%', '100%', '50%', '60%', '80%']}
+        >
+          <Heading
+            color="white"
+            fontSize="36"
+            fontFamily="Fira Sans Bold"
+            textTransform="uppercase"
+            wordBreak="break-all"
+          >
+            {shouldBreakTitle ? (
+              <p>
+                Comunidade <br /> Renderizando
+              </p>
+            ) : (
+              `Comunidade Renderizando`
+            )}
+          </Heading>
 
-      <Flex w="full" as="article" justify="center" align="center" flexDir="column">
-        <Box w="full" justifyContent="center" mt="2">
-          <Text fontWeight="thin">
-            Arquiteta e Urbanista, apaixonada por imagens renderizadas e pelo mundo dos projetos de interiores
-            residenciais. Iniciou sua paixão pelas maquetes eletrônicas há 5 anos, e, desde então, vem agregando um
-            vasto conhecimento na área. Em seus projetos busca transformar os ambientes em lares com autenticidade e
-            funcionalidade, através de uma arquitetura única e com alma, sempre prezando às necessidades de cada
-            cliente.
+          <br />
+
+          <Text color="white" fontSize="18">
+            Já pensou em ter acesso gratuito à um grupo onde você poderá ter <b>dicas</b>, <b>bloquinhos</b>{' '}
+            configurados, <b>materiais exclusivos</b> e <b>muito mais</b>?
           </Text>
-        </Box>
-      </Flex>
 
-      <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
-        <JoinCommunity autoFocusEmail />
+          <br />
+
+          <Text color="white" fontSize="18">
+            <b>Entre agora</b> para a nossa comunidade e <b>descomplique</b> a renderização.
+          </Text>
+
+          <br />
+          <JoinCommunity autoFocusEmail />
+        </Stack>
+
+        <Stack display="flex" justifyContent="flex-end" css={brunaWrapperCSS}>
+          <Image
+            width={240}
+            height={380}
+            quality={100}
+            placeholder="empty"
+            src="/bruna.png"
+            alt="Bruna Ferri | Arquiteta"
+          />
+        </Stack>
       </Stack>
-    </>
+    </Stack>
   );
 };
 

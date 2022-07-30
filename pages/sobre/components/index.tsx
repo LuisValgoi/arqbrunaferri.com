@@ -26,7 +26,7 @@ const SobreComp = () => {
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
         <NextLink href="/" passHref>
-          <Button aria-label='Voltar' textTransform="uppercase" as="a" w="36" justifyContent="center">
+          <Button aria-label="Voltar" textTransform="uppercase" as="a" w="36" justifyContent="center">
             Voltar
           </Button>
         </NextLink>
