@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 
-import { FormControl, IconButton, Input, Stack, useToast } from '@chakra-ui/react';
+import { Button, FormControl, IconButton, Input, Stack, useMediaQuery, useToast } from '@chakra-ui/react';
 import { Field, FieldProps, Form, Formik, FormikHelpers, FormikValues } from 'formik';
 import { AiOutlineSend } from 'react-icons/ai';
 import { Prisma } from '@prisma/client';
@@ -32,12 +32,13 @@ const EMAIL_PATTERN =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const handleEmailValidation = (value: string) => {
-  return !value || !EMAIL_PATTERN.test(value);
+  return !EMAIL_PATTERN.test(value);
 };
 
 const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocusEmail }) => {
   const toast = useToast();
   const emailRef = useRef<HTMLInputElement>(null);
+  const [isMobile] = useMediaQuery('(max-width: 480px)');
 
   useEffect(() => {
     if (autoFocusEmail) setTimeout(() => emailRef.current?.focus(), 100);
@@ -104,24 +105,43 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
                     ref={emailRef}
                     value={props.form.values.email}
                     placeholder="Ex: arqbrunaferri@gmail.com"
-                    backgroundColor="white"
-                    focusBorderColor="arqbrown.500"
-                    borderColor="arqbrown.300"
-                    _placeholder={{ opacity: 0.3 }}
+                    backgroundColor="transparent"
+                    focusBorderColor="white"
+                    borderColor="white"
+                    errorBorderColor="#e30f0f"
+                    color="white"
+                    _placeholder={{ opacity: 0.3, color: 'white' }}
                     w="full"
                   />
                 </FormControl>
               )}
             </Field>
 
-            <IconButton
-              css={sendButtonCommunity}
-              isLoading={props.isSubmitting}
-              aria-label="Enviar"
-              type="submit"
-              color="white"
-              icon={<AiOutlineSend />}
-            />
+            {isMobile ? (
+              <IconButton
+                css={sendButtonCommunity}
+                isLoading={props.isSubmitting}
+                aria-label="Entrar"
+                type="submit"
+                bgColor="white"
+                color="arqbrown.300"
+                icon={<AiOutlineSend />}
+                _hover={{ bgColor: 'white' }}
+              />
+            ) : (
+              <Button
+                css={sendButtonCommunity}
+                isLoading={props.isSubmitting}
+                aria-label="Entrar"
+                type="submit"
+                bgColor="white"
+                color="arqbrown.300"
+                leftIcon={<AiOutlineSend />}
+                _hover={{ bgColor: 'white' }}
+              >
+                Entrar
+              </Button>
+            )}
           </Stack>
         </Form>
       )}
