@@ -8,7 +8,7 @@ import {
   ProfileImageArea,
   ProfileImageBorder,
   profileImageStyle,
-} from '../styles';
+} from './index.style';
 import { Heading, useColorModeValue, useMediaQuery } from '@chakra-ui/react';
 
 const PageHeader: React.FC = () => {
@@ -39,7 +39,7 @@ const PageHeader: React.FC = () => {
           css={profileImageStyle}
           placeholder="empty"
           layout="fixed"
-          src="/logo.webp"
+          src="/logo.png"
           alt="Bruna Ferri | Arquiteta"
         />
         {letteringShown && (

@@ -1,12 +1,13 @@
-import { Box, Flex, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import BasePage from '../components/BasePage';
-import { Button, Heading, Text } from '../components/UI';
+import { Box, Flex, Stack, useBreakpointValue } from '@chakra-ui/react';
+import { Heading, Text, Button } from '@/components/UI';
 
-export default function Sobre() {
+const SobreComp = () => {
+  const variantWidth = useBreakpointValue({ base: 320, lg: 400 });
+
   return (
-    <BasePage stretch>
+    <Flex as="article" width={variantWidth} direction="column" maxW={variantWidth} textAlign="center">
       <Heading fontSize="2xl" textTransform="uppercase">
         Sobre
       </Heading>
@@ -25,11 +26,13 @@ export default function Sobre() {
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
         <NextLink href="/" passHref>
-          <Button textTransform="uppercase" as="a" w="36" justifyContent="center">
+          <Button aria-label="Voltar" textTransform="uppercase" as="a" w="36" justifyContent="center">
             Voltar
           </Button>
         </NextLink>
       </Stack>
-    </BasePage>
+    </Flex>
   );
-}
+};
+
+export default SobreComp;

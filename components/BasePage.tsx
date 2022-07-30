@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
 import { Flex, useBreakpointValue } from '@chakra-ui/react';
 import Head from 'next/head';
-import PageHeader from './PageHeader';
-import Background from './Background';
-import FloatingButtons from './FloatingButtons';
+import PageHeader from '@/components/PageHeader';
+import Background from '@/components/Background';
+import FloatingButtons from '@/components/FloatingButtons';
 
 export type BasePageProps = PropsWithChildren & {
   title?: string;
@@ -57,11 +57,11 @@ const BasePage: React.FC<BasePageProps> = ({
       </Head>
       <Background stretch={stretch} />
       <Flex as="main" w="full" direction="column" align="center" justify="start">
+        <FloatingButtons />
         <Flex as="article" width={variantWidth} direction="column" maxW={variantWidth} textAlign="center">
           <PageHeader />
-          <FloatingButtons />
-          {children}
         </Flex>
+        {children}
       </Flex>
     </>
   );

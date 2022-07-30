@@ -17,13 +17,17 @@
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@prisma/client": "^4.1.0",
     "circletype": "^2.3.0",
+    "formik": "^2.2.9",
     "framer-motion": "^6.5.1",
     "next": "12.2.0",
     "prettier": "2.6.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^1.1.0",
@@ -33,6 +37,7 @@
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.0",
     "husky": "^8.0.0",
-    "typescript": "4.7.4"
+    "prisma": "^4.1.0",
+    "typescript": "4.5.5"
   }
 }

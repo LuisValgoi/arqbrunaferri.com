@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import ThemeSwitcher from './ThemeSwitcher';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { Box, Button, Icon } from '@chakra-ui/react';
 import { CgFacebook } from 'react-icons/cg';
 import { BsInstagram } from 'react-icons/bs';
