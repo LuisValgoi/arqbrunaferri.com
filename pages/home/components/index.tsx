@@ -1,21 +1,19 @@
 import NextLink from 'next/link';
 
-import { Flex, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverTrigger, Stack } from '@chakra-ui/react';
+import { Flex, Stack, useBreakpointValue } from '@chakra-ui/react';
 import { Button, Heading, HeadingCallout, Text } from '@/components/UI';
 import { BsPencilFill, BsWhatsapp } from 'react-icons/bs';
-import JoinCommunityField from '@/components/JoinCommunity';
-import { FaLock, FaLockOpen } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
 
 export interface HomeCompProps {
   isMobile: boolean;
-  isOpen: boolean;
-  onPopoverToggle: () => void;
-  onPopoverClose: () => void;
 }
 
 const HomeComp = (props: HomeCompProps) => {
+  const variantWidth = useBreakpointValue({ base: 320, lg: 400 });
+
   return (
-    <>
+    <Flex as="article" width={variantWidth} direction="column" maxW={variantWidth} textAlign="center">
       <Flex w="full" as="article" justify="center" align="center" marginTop="4">
         <HeadingCallout fontSize="sm" textTransform="uppercase">
           Em que posso te ajudar?
@@ -23,29 +21,19 @@ const HomeComp = (props: HomeCompProps) => {
       </Flex>
 
       <Stack as="article" direction="column" spacing="12px" justify="center" align="center" mt="4" w="full">
-        <Popover isOpen={props.isOpen} onClose={props.onPopoverClose} closeOnEsc>
-          <PopoverTrigger>
-            <Button
-              variant="solid"
-              fontFamily="Emperatriz"
-              textTransform="uppercase"
-              justifyContent="center"
-              w="72"
-              height={12}
-              onClick={props.onPopoverToggle}
-              leftIcon={props.isOpen ? <FaLockOpen /> : <FaLock />}
-              aria-label="Grupo Renderizando"
-            >
-              Grupo Renderizando
-            </Button>
-          </PopoverTrigger>
-
-          <PopoverContent p={2}>
-            <PopoverArrow />
-            <PopoverBody>Só me confirma teu e-mail...</PopoverBody>
-            <JoinCommunityField finallyCallback={props.onPopoverClose} autoFocusEmail={props.isOpen} />
-          </PopoverContent>
-        </Popover>
+        <NextLink href="/grupo" passHref>
+          <Button
+            aria-label="Grupo Renderizando"
+            variant="solid"
+            fontFamily="Emperatriz"
+            textTransform="uppercase"
+            justifyContent="center"
+            w="72"
+            leftIcon={<FaLock />}
+          >
+            Grupo Renderizando
+          </Button>
+        </NextLink>
 
         <NextLink href="/orcamento" passHref>
           <Button
@@ -88,7 +76,7 @@ const HomeComp = (props: HomeCompProps) => {
         <br />
         {props.isMobile && <br />}
       </Flex>
-    </>
+    </Flex>
   );
 };
 
