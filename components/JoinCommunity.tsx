@@ -38,7 +38,7 @@ const handleEmailValidation = (value: string) => {
 const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocusEmail }) => {
   const toast = useToast();
   const emailRef = useRef<HTMLInputElement>(null);
-  const [isMobile] = useMediaQuery('(max-width: 480px)');
+  const [isMobile] = useMediaQuery('(max-width: 600px)');
 
   useEffect(() => {
     if (autoFocusEmail) setTimeout(() => emailRef.current?.focus(), 100);
@@ -108,7 +108,7 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
                     backgroundColor="transparent"
                     focusBorderColor="white"
                     borderColor="white"
-                    errorBorderColor="#e30f0f"
+                    errorBorderColor="#e6a6a6"
                     color="white"
                     _placeholder={{ opacity: 0.3, color: 'white' }}
                     w="full"
@@ -136,6 +136,8 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
                 type="submit"
                 bgColor="white"
                 color="arqbrown.300"
+                textTransform="uppercase"
+                fontFamily="Emperatriz"
                 leftIcon={<AiOutlineSend />}
                 _hover={{ bgColor: 'white' }}
               >
