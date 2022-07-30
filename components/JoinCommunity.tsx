@@ -1,6 +1,17 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 
-import { Button, FormControl, IconButton, Input, Stack, useMediaQuery, useToast } from '@chakra-ui/react';
+import {
+  Button,
+  FormControl,
+  HStack,
+  IconButton,
+  Input,
+  Stack,
+  useBreakpointValue,
+  useMediaQuery,
+  useToast,
+  VStack,
+} from '@chakra-ui/react';
 import { Field, FieldProps, Form, Formik, FormikHelpers, FormikValues } from 'formik';
 import { AiOutlineSend } from 'react-icons/ai';
 import { Prisma } from '@prisma/client';
@@ -39,6 +50,7 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
   const toast = useToast();
   const emailRef = useRef<HTMLInputElement>(null);
   const [isMobile] = useMediaQuery('(max-width: 600px)');
+  const useButtonWidth = useBreakpointValue({ base: "full", lg: 400 });
 
   useEffect(() => {
     if (autoFocusEmail) setTimeout(() => emailRef.current?.focus(), 100);
@@ -92,43 +104,34 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
     [finallyCallback, handleSaveLead, toast],
   );
 
+  const ButtonsStack = isMobile ? VStack : HStack;
+
   return (
     <Formik initialValues={{ email: '' } as JoinCommunityFormValues} onSubmit={handleOnSubmit}>
       {(props) => (
         <Form style={{ width: '100%' }}>
           <Stack direction="row">
-            <Field name="email" validate={handleEmailValidation}>
-              {(props: FieldProps<JoinCommunityFormValues, JoinCommunityFormValues>) => (
-                <FormControl isInvalid={!!(props.form.errors.email && props.form.touched.email)}>
-                  <Input
-                    {...props.field}
-                    ref={emailRef}
-                    value={props.form.values.email}
-                    placeholder="Ex: arqbrunaferri@gmail.com"
-                    backgroundColor="transparent"
-                    focusBorderColor="white"
-                    borderColor="white"
-                    errorBorderColor="#e6a6a6"
-                    color="white"
-                    _placeholder={{ opacity: 0.3, color: 'white' }}
-                    w="full"
-                  />
-                </FormControl>
-              )}
-            </Field>
+            <ButtonsStack width="full">
+              <Field name="email" validate={handleEmailValidation}>
+                {(props: FieldProps<JoinCommunityFormValues, JoinCommunityFormValues>) => (
+                  <FormControl isInvalid={!!(props.form.errors.email && props.form.touched.email)}>
+                    <Input
+                      {...props.field}
+                      ref={emailRef}
+                      value={props.form.values.email}
+                      placeholder="Ex: arqbrunaferri@gmail.com"
+                      backgroundColor="transparent"
+                      focusBorderColor="white"
+                      borderColor="white"
+                      errorBorderColor="#e6a6a6"
+                      width="full"
+                      color="white"
+                      _placeholder={{ opacity: 0.3, color: 'white' }}
+                    />
+                  </FormControl>
+                )}
+              </Field>
 
-            {isMobile ? (
-              <IconButton
-                css={sendButtonCommunity}
-                isLoading={props.isSubmitting}
-                aria-label="Entrar"
-                type="submit"
-                bgColor="white"
-                color="arqbrown.300"
-                icon={<AiOutlineSend />}
-                _hover={{ bgColor: 'white' }}
-              />
-            ) : (
               <Button
                 css={sendButtonCommunity}
                 isLoading={props.isSubmitting}
@@ -139,11 +142,12 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
                 textTransform="uppercase"
                 fontFamily="Emperatriz"
                 leftIcon={<AiOutlineSend />}
+                width={useButtonWidth}
                 _hover={{ bgColor: 'white' }}
               >
                 Entrar
               </Button>
-            )}
+            </ButtonsStack>
           </Stack>
         </Form>
       )}
