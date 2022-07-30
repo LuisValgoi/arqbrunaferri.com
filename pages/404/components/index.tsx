@@ -1,11 +1,13 @@
 import NextLink from 'next/link';
 
-import { Box, Flex, Stack } from '@chakra-ui/react';
+import { Box, Flex, Stack, useBreakpointValue } from '@chakra-ui/react';
 import { Button, Heading, Text } from '@/components/UI';
 
 const FourOhFourComp = () => {
+  const variantWidth = useBreakpointValue({ base: 320, lg: 400 });
+
   return (
-    <>
+    <Flex as="article" width={variantWidth} direction="column" maxW={variantWidth} textAlign="center">
       <Heading fontSize="2xl" textTransform="uppercase">
         Página não Encontrada
       </Heading>
@@ -23,7 +25,7 @@ const FourOhFourComp = () => {
           </Button>
         </NextLink>
       </Stack>
-    </>
+    </Flex>
   );
 };
 

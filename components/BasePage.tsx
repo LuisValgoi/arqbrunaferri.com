@@ -57,11 +57,11 @@ const BasePage: React.FC<BasePageProps> = ({
       </Head>
       <Background stretch={stretch} />
       <Flex as="main" w="full" direction="column" align="center" justify="start">
+        <FloatingButtons />
         <Flex as="article" width={variantWidth} direction="column" maxW={variantWidth} textAlign="center">
           <PageHeader />
-          <FloatingButtons />
-          {children}
         </Flex>
+        {children}
       </Flex>
     </>
   );

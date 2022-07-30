@@ -1,11 +1,13 @@
 import NextLink from 'next/link';
 
-import { Box, Flex, Stack } from '@chakra-ui/react';
+import { Box, Flex, Stack, useBreakpointValue } from '@chakra-ui/react';
 import { Heading, Text, Button } from '@/components/UI';
 
 const SobreComp = () => {
+  const variantWidth = useBreakpointValue({ base: 320, lg: 400 });
+
   return (
-    <>
+    <Flex as="article" width={variantWidth} direction="column" maxW={variantWidth} textAlign="center">
       <Heading fontSize="2xl" textTransform="uppercase">
         Sobre
       </Heading>
@@ -29,7 +31,7 @@ const SobreComp = () => {
           </Button>
         </NextLink>
       </Stack>
-    </>
+    </Flex>
   );
 };
 
