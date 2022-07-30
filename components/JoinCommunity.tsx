@@ -50,7 +50,7 @@ const JoinCommunity: React.FC<JoinCommunityProps> = ({ finallyCallback, autoFocu
   const toast = useToast();
   const emailRef = useRef<HTMLInputElement>(null);
   const [isMobile] = useMediaQuery('(max-width: 600px)');
-  const useButtonWidth = useBreakpointValue({ base: "full", lg: 400 });
+  const useButtonWidth = useBreakpointValue({ base: 'full', lg: 400 });
 
   useEffect(() => {
     if (autoFocusEmail) setTimeout(() => emailRef.current?.focus(), 100);

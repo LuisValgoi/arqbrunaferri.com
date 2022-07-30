@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 
 const cardInternalCSSLight = css`
   margin-inline-start: 0 !important;
-  background: linear-gradient(180deg, rgb(125, 81, 56, 0.8) -14.07%, rgb(60,49,33,0.8) 137.12%);
+  background: linear-gradient(180deg, rgb(125, 81, 56, 0.8) -14.07%, rgb(60, 49, 33, 0.8) 137.12%);
 `;
 
 const cardInternalCSSDark = css`
