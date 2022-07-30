@@ -50,6 +50,8 @@
     DATABASE_URL="mysql://root@127.0.0.1:3310/arqbrunaferri"
 ```
 
-# Secrets Infos
+# Links
 
-- [NOTION](https://www.notion.so/ARQBRUNAFERRI-SECRETS-4a94212eb353418ab42307d0d38baf4b)
+- [Figma](https://www.figma.com/file/Ab0tkdQ6lU1CRIi4HLRxP8/ARQBRUNAFERRI?node-id=0%3A1)
+
+- [Notion](https://www.notion.so/ARQBRUNAFERRI-SECRETS-4a94212eb353418ab42307d0d38baf4b)
